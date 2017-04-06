@@ -17,8 +17,8 @@ private:
 		std::vector<Node*> children; // list of children
         int current_child;
 
-		Node(const T& _value=T(), Node* _parent=nullptr, int _current=0): 
-            value(_value), 
+		Node(const T& _value=T(), Node* _parent=nullptr, int _current=0):
+            value(_value),
             parent(_parent),
             current_child(_current)
             {}
@@ -28,7 +28,36 @@ private:
         {}
 	};
 
-	Node* rootNode;
+    void delete_node(Node* node)
+    {
+        if(node->children.size() == 0)
+        {
+            Node* temp = node;
+            node = node->parent;
+            delete temp;
+        }
+        else
+        {
+            int index = node->current_child;
+            node->current_child++;
+            delete_node(node->children[index]);
+        }
+        numer_of_nodes--;
+    }
+
+    void delete_root()
+    {
+        for(auto& child : root_node->children)
+        {
+            iterator it = iterator(child);
+            erase(it);
+        }
+        delete root_node;
+        root_node = nullptr;
+        numer_of_nodes--;
+    }
+
+	Node* root_node;
 	size_t numer_of_nodes;
 
 public:
@@ -46,7 +75,7 @@ public:
         // PRE-ORDER
         Node* traverse(Node* node)
         {
-            if(node == nullptr)
+            if(node == nullptr) // warunek końcowy
             {
                 return node;
             }
@@ -57,7 +86,7 @@ public:
             }
             if(node->children.size() != 0)
             {
-                int index = node->current_child; 
+                int index = node->current_child;
                 node->current_child++;
                 return node->children[index];
             }
@@ -83,8 +112,8 @@ public:
         bool operator!=(const iterator& it){ return this->ptr != it.ptr; }
     };
 
-	Drzewo(): rootNode(nullptr), numer_of_nodes(0){}
-    Drzewo(const T& root_value): rootNode(new Node(root_value)), numer_of_nodes(1){}
+	Drzewo(): root_node(nullptr), numer_of_nodes(0){}
+    Drzewo(const T& root_value): root_node(new Node(root_value)), numer_of_nodes(1){}
     // TODO
     Drzewo(const Drzewo & other_tree);
     // TODO
@@ -97,11 +126,11 @@ public:
 
 	iterator insert(const T& value, iterator parent, std::size_t index)
 	{
-		if(parent.ptr == nullptr && rootNode == nullptr && index == 0)
+		if(parent.ptr == nullptr && root_node == nullptr && index == 0)
         {
-            rootNode = new Node(value);
+            root_node = new Node(value);
             numer_of_nodes++;
-            return iterator(rootNode);
+            return iterator(root_node);
         }
         else
 		{
@@ -121,23 +150,26 @@ public:
 		}
 	}
 
-	// TODO
-    void erase(iterator& node)
-    {
-        auto begin = node.ptr->parent->children.begin();
-        auto end = node.ptr->parent->children.end();
-        auto it = find(begin,end,node.ptr);
-        if(node.ptr == rootNode)
-        {
 
-        }
-        else
+    void erase(const iterator& it)
+    {
+        if(it.ptr == root_node)
         {
-            for(int i=0; i<node.ptr->children.size(); i++)
-            {
-                Node* temp = traverse(node.ptr);
-            }
+            delete_root();
+            numer_of_nodes--;
+            return;
         }
+
+        auto begin = it.ptr->parent->children.begin();
+        auto end = it.ptr->parent->children.end();
+        auto iter = find(begin,end,it.ptr);
+
+        for(auto& child : it.ptr->children)
+        {
+            delete_node(child);
+        }
+        it.ptr->parent->children.erase(iter);
+        numer_of_nodes--;
     }
 
     iterator getChild(const iterator& parent, std::size_t index)
@@ -145,9 +177,9 @@ public:
         return iterator(parent.ptr->children[index]);
     }
 
-    iterator begin(){ return iterator(rootNode); }
+    iterator begin(){ return iterator(root_node); }
     iterator end(){ return iterator(nullptr); }
-    iterator root(){ return iterator(rootNode); }
+    iterator root(){ return iterator(root_node); }
     bool empty(){ return numer_of_nodes == 0; }
     std::size_t size() { return numer_of_nodes; }
     int getNumberOfChildren(const iterator& parent){ return parent.ptr->children.size(); }
