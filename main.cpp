@@ -8,15 +8,15 @@ int main()
 {
 	Drzewo<int> tree;
 	auto root = tree.insert(3,tree.end(),0);
-	auto node_1 = tree.insert(4,root,0);
-	auto node_2 = tree.insert(2,node_1,0);
+	auto grandpa = tree.insert(4,root,0);
+	auto son = tree.insert(2,grandpa,0);
 	for(int i=1; i<10; i++)
-		node_2 = tree.insert(2,node_1,i);
+		son = tree.insert(2,grandpa,i);
 
 
-	auto node_3 = tree.insert(23,node_2,0);
-	auto node_4 = tree.insert(23,node_3,0);
-	auto node_4_1 = tree.insert(600,node_3,0);
+	auto grandson = tree.insert(23,son,0);
+	auto baby = tree.insert(23,grandson,0);
+	auto baby_1 = tree.insert(600,grandson,0);
 
 	Drzewo<int>::iterator child = tree.getChild(root,0);
 	cout << "Child returned by 'getChild' method: " << *child << endl;
