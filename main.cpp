@@ -18,6 +18,12 @@ int main()
 	auto baby = tree.insert(23,grandson,0);
 	auto baby_1 = tree.insert(600,grandson,0);
 
+	for(const auto& child : tree)
+		cout << child << endl;
+
+	for(const auto& child : tree)
+		cout << child << endl;
+
 	Drzewo<int>::iterator child = tree.getChild(root,0);
 	cout << "Child returned by 'getChild' method: " << *child << endl;
 

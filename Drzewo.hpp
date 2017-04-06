@@ -15,12 +15,12 @@ private:
 		T value;
 		Node* parent;
 		std::vector<Node*> children; // list of children
-        int currentChild;
+        int current_child;
 
 		Node(const T& _value=T(), Node* _parent=nullptr, int _current=0): 
             value(_value), 
             parent(_parent),
-            currentChild(_current)
+            current_child(_current)
             {}
 		Node(T && _value, Node* _parent=nullptr): value(std::move(_value)), parent(_parent){}
         // TODO
@@ -29,7 +29,7 @@ private:
 	};
 
 	Node* rootNode;
-	size_t numberOfNodes;
+	size_t numer_of_nodes;
 
 public:
 
@@ -46,18 +46,22 @@ public:
         // PRE-ORDER
         Node* traverse(Node* node)
         {
-            if(node->children.size() != 0)
+            if(node == nullptr)
             {
-                node = node->children[node->currentChild];
                 return node;
             }
-            else
+            if(node->current_child == node->children.size())
             {
-                node->parent->currentChild++;
-                node->currentChild = 0;
-                node = node->parent;
-                return traverse(node);
+                node->current_child = 0;
+                return traverse(node->parent);
             }
+            if(node->children.size() != 0)
+            {
+                int index = node->current_child; 
+                node->current_child++;
+                return node->children[index];
+            }
+            return traverse(node);
         }
 
         iterator(Node* node): ptr(node){}
@@ -79,8 +83,8 @@ public:
         bool operator!=(const iterator& it){ return this->ptr != it.ptr; }
     };
 
-	Drzewo(): rootNode(nullptr), numberOfNodes(0){}
-    Drzewo(const T& root_value): rootNode(new Node(root_value)), numberOfNodes(1){}
+	Drzewo(): rootNode(nullptr), numer_of_nodes(0){}
+    Drzewo(const T& root_value): rootNode(new Node(root_value)), numer_of_nodes(1){}
     // TODO
     Drzewo(const Drzewo & other_tree);
     // TODO
@@ -96,7 +100,7 @@ public:
 		if(parent.ptr == nullptr && rootNode == nullptr && index == 0)
         {
             rootNode = new Node(value);
-            numberOfNodes++;
+            numer_of_nodes++;
             return iterator(rootNode);
         }
         else
@@ -112,7 +116,7 @@ public:
                 // wstawiamy w określone miejsce
 				children->insert(children->begin()+index,node);
 			}
-			numberOfNodes++;
+			numer_of_nodes++;
 			return iterator(node);
 		}
 	}
@@ -144,8 +148,8 @@ public:
     iterator begin(){ return iterator(rootNode); }
     iterator end(){ return iterator(nullptr); }
     iterator root(){ return iterator(rootNode); }
-    bool empty(){ return numberOfNodes == 0; }
-    std::size_t size() { return numberOfNodes; }
+    bool empty(){ return numer_of_nodes == 0; }
+    std::size_t size() { return numer_of_nodes; }
     int getNumberOfChildren(const iterator& parent){ return parent.ptr->children.size(); }
 };
 
