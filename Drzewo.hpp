@@ -30,30 +30,12 @@ private:
 
     void delete_node(Node* node)
     {
-        if(node->children.size() == 0)
+        for(Node* child : node->children)
         {
-            Node* temp = node;
-            node = node->parent;
-            delete temp;
+            delete_node(child);
         }
-        else
-        {
-            int index = node->current_child;
-            node->current_child++;
-            delete_node(node->children[index]);
-        }
-        numer_of_nodes--;
-    }
-
-    void delete_root()
-    {
-        for(auto& child : root_node->children)
-        {
-            iterator it = iterator(child);
-            erase(it);
-        }
-        delete root_node;
-        root_node = nullptr;
+        delete node;
+        node->children.clear();
         numer_of_nodes--;
     }
 
@@ -155,21 +137,13 @@ public:
     {
         if(it.ptr == root_node)
         {
-            delete_root();
-            numer_of_nodes--;
+            delete_node(it.ptr);
+            root_node = nullptr;
             return;
         }
-
-        auto begin = it.ptr->parent->children.begin();
-        auto end = it.ptr->parent->children.end();
-        auto iter = find(begin,end,it.ptr);
-
-        for(auto& child : it.ptr->children)
-        {
-            delete_node(child);
-        }
-        it.ptr->parent->children.erase(iter);
-        numer_of_nodes--;
+        int position = it.ptr - it.ptr->parent->children[0];
+        it.ptr->parent->children.erase(it.ptr->parent->children.begin() + position);
+        delete_node(it.ptr);
     }
 
     iterator getChild(const iterator& parent, std::size_t index)

@@ -22,9 +22,9 @@ int main()
 	auto baby = tree.insert(23,grandson,0);
 	auto baby_brother = tree.insert(600,grandson,0);
 
-	cout << "Deleting root : " << *root << endl;
 	tree.erase(root);
 
+	cout << "Tree: " << endl;
 	for(const auto& child : tree)
 		cout << child << endl;
 
@@ -44,9 +44,7 @@ int main()
 	cout << "Tree size: " << tree.size() << endl;
 	cout << "Number of roots children: " << tree.getNumberOfChildren(root) << endl;
 
-	cout << "root : " << *tree.root() << endl;
 	// tree.erase(root);
-
 
 	return 0;
 }
