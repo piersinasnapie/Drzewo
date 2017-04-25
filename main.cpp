@@ -7,26 +7,29 @@ using namespace std;
 int main()
 {
 	Drzewo<int> tree;
-	auto root = tree.insert(3,tree.end(),0);
+	// auto root = tree.insert(3,tree.end(),0);
 
-	cout << "Root : " << *tree.root() << endl;
+	// auto grandpa = tree.insert(4,root,0);
 
-	auto grandpa = tree.insert(4,root,0);
-
-	auto son = tree.insert(2,grandpa,0);
-	for(int i=1; i<10; i++)
-		son = tree.insert(2,grandpa,i);
+	// auto son = tree.insert(2,grandpa,0);
+	// for(int i=1; i<10; i++)
+	// 	son = tree.insert(2,grandpa,i);
 
 
-	auto grandson = tree.insert(23,son,0);
-	auto baby = tree.insert(23,grandson,0);
-	auto baby_brother = tree.insert(600,grandson,0);
+	// auto grandson = tree.insert(23,son,0);
+	// auto baby = tree.insert(23,grandson,0);
+	// auto baby_brother = tree.insert(600,grandson,0);
 
-	tree.erase(root);
 
-	cout << "Tree: " << endl;
+	auto root = tree.insert(4,tree.end(),0);
+	auto c1 = tree.insert(5,root,0);
+	c1 = tree.insert(6,root,0);
+	auto c2 = tree.insert(10,c1,0);
+
 	for(const auto& child : tree)
 		cout << child << endl;
+
+	// tree.erase(root);
 
 	// cout << "Deleting : " << *baby << endl;
 	// tree.erase(baby);
@@ -41,9 +44,9 @@ int main()
 	// for(const auto& child : tree)
 	// 	cout << child << endl;
 
-	cout << "Tree size: " << tree.size() << endl;
-	cout << "Number of roots children: " << tree.getNumberOfChildren(root) << endl;
+	// cout << "Other tree" << endl;
 
+	// Drzewo<int> other_tree(tree);
 	// tree.erase(root);
 
 	return 0;
