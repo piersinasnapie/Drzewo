@@ -40,6 +40,16 @@ private:
         {
             delete_node(child);
         }
+        if(node->parent->children[0] != node)
+        {
+            for(Node* child : node->parent->children)
+            {
+                if(child->brother == node)
+                {
+                    child->brother = node->brother;
+                }
+            }
+        }
         delete node;
         node->children.clear();
         numer_of_nodes--;
@@ -158,11 +168,8 @@ public:
             return *this;
         }
 
-        bool operator!=(const iterator& it)
-        { 
-            return this->next != it.next;
-        }
-        bool operator==(const iterator& it){ return this->next == it.next; }
+        bool operator!=(const iterator& it){ return this->next != it.next; }
+        bool operator==(const iterator& it){ return this->ptr == it.ptr; }
     };
 
 	Drzewo(): root_node(nullptr), numer_of_nodes(0){}
@@ -192,7 +199,7 @@ public:
     Drzewo & operator=(const Drzewo& other_tree);
     ~Drzewo()
     {
-        delete_tree();
+        // delete_tree();
     }
 
 	iterator insert(const T& value, iterator parent, std::size_t index)
