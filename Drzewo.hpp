@@ -123,12 +123,12 @@ public:
     private:
 
         Node* ptr;
-        Node* next;
+        // Node* next;
         friend class Drzewo;
 
-        iterator(Node* _ptr=nullptr, Node* _next=nullptr): 
-            ptr(_ptr),
-            next(_next)
+        iterator(Node* _ptr=nullptr): 
+            ptr(_ptr)
+            // next(_next)
             {}
 
     public:
@@ -167,10 +167,10 @@ public:
 
         T* operator->()
         {
-            return &ptr->value;
+            
         } 
 
-        bool operator!=(const iterator& it){ return this->next != it.next; }
+        bool operator!=(const iterator& it){ return this->ptr != it.ptr; }
         bool operator==(const iterator& it){ return this->ptr == it.ptr; }
     };
 
@@ -183,26 +183,31 @@ public:
     // TODO
     Drzewo(const Drzewo& other_tree): number_of_nodes(0)
     {
-        Node* other_root = other_tree.root().ptr;
-        root_node = new Node(other_root->value);        
-        number_of_nodes++;
+        if(other_tree.root().ptr != nullptr)
+        {
+            Node* other_root = other_tree.root().ptr;
+            root_node = new Node(other_root->value);        
+            number_of_nodes++;
 
-        copy_elements(root_node, other_root, other_tree.size());
+            copy_elements(root_node, other_root, other_tree.size());
+        }
     }
     
     Drzewo & operator=(const Drzewo& other_tree)
     {
-        if(number_of_nodes)
+        if(root_node != nullptr && other_tree.root().ptr != nullptr)
         {
-            delete_tree();
+            if(number_of_nodes)
+            {
+                delete_tree();
+            }
+
+            Node* other_root = other_tree.root().ptr;
+            root_node = new Node(other_root->value);        
+            number_of_nodes++;
+
+            copy_elements(root_node, other_root, other_tree.size());
         }
-
-        Node* other_root = other_tree.root().ptr;
-        root_node = new Node(other_root->value);        
-        number_of_nodes++;
-
-        copy_elements(root_node, other_root, other_tree.size());
-
         return *this;
     }
 
@@ -265,8 +270,8 @@ public:
         return iterator(parent.ptr->children[index]);
     }
 
-    iterator begin() const { return iterator(root_node,root_node); }
-    iterator end() const { return iterator(nullptr,nullptr); }
+    iterator begin() const { return iterator(root_node); }
+    iterator end() const { return iterator(nullptr); }
     iterator root() const { return iterator(root_node); }
     bool empty(){ return number_of_nodes == 0; }
     std::size_t size() const { return number_of_nodes; }

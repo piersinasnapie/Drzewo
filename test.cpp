@@ -25,6 +25,7 @@ public:
         suite->addTest(new TestCaller<EmptyTest>("empty_with_root_erase", &EmptyTest::empty_with_root_erase ));
         suite->addTest(new TestCaller<EmptyTest>("empty_with_root_insert_erase", &EmptyTest::empty_with_root_insert_erase ));
         suite->addTest(new TestCaller<EmptyTest>("empty_with_children_erase_root", &EmptyTest::empty_with_children_erase_root ));
+        suite->addTest(new TestCaller<EmptyTest>("empty_other_tree", &EmptyTest::empty_other_tree ));
 
         return suite;
     }
@@ -92,6 +93,17 @@ public:
         tree.insert(3,child,1);
         tree.erase(root);
         CPPUNIT_ASSERT_EQUAL(true, tree.empty());   
+    }
+
+    /**
+     * Do pustego drzewa przypisujemy inne puste drzewo
+     */
+    void empty_other_tree()
+    {
+        Drzewo<double> tree;
+        Drzewo<double> other_tree;
+        tree = other_tree;
+        CPPUNIT_ASSERT_EQUAL(true, tree.empty());
     }
 };
 
@@ -314,7 +326,7 @@ public:
     }
 
     /**
-     * Wstawion korzeń, sprawdzono rozmiar drzewa oraz iterator.
+     * Wstawion korzeń, sprawdzono rozmiar drzewa oraz iterator pokazujący na korzeń.
      */
     void insert_root()
     {
@@ -365,6 +377,7 @@ public:
         suite->addTest(new TestCaller<EraseTest>("erase_child_shift", &EraseTest::erase_child_shift ));
         suite->addTest(new TestCaller<EraseTest>("erase_root_value", &EraseTest::erase_root_value ));
         suite->addTest(new TestCaller<EraseTest>("erase_many_children", &EraseTest::erase_many_children ));
+        suite->addTest(new TestCaller<EraseTest>("delete_tree_many_times", &EraseTest::erase_many_children ));
 
         return suite;
     }
@@ -389,7 +402,7 @@ public:
         auto root = tree.insert(4,tree.end(),0);
         tree.insert(1,root,0);
         auto child = tree.insert(2,root,1);
-        auto c = tree.insert(3,root,2);
+        tree.insert(3,root,2);
         tree.erase(child);
         CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(root) == 2);
     }
@@ -435,6 +448,79 @@ public:
         int children_size = tree.getNumberOfChildren(son);
         tree.erase(son);
         CPPUNIT_ASSERT_EQUAL(true, size == tree.size() + children_size + 1);
+    }
+
+    /**
+     * Bardzo rozbudowane drzewo, usuwamy wiele razy i tworzymy wiele razy
+     */
+    void delete_tree_many_times()
+    {
+        Drzewo<int> tree(4);
+        auto grand = tree.insert(13, tree.root(), 0);
+        auto grand_brother = tree.insert(17, tree.root(), 1);
+        auto grand_sister = tree.insert(11, tree.root(), 0);
+
+        // grand_sister
+        tree.insert(50,grand_sister,0);
+        auto mom = tree.insert(72,grand_sister,1);
+        tree.insert(81,grand_sister,2);
+        auto daughter = tree.insert(15,mom,0);
+        tree.insert(111,daughter,0);
+        tree.insert(112,daughter,1);
+        auto child = tree.insert(113,daughter,2);
+        tree.insert(901,child,0);
+        tree.insert(98,mom,1);
+
+        // grand
+        auto father = tree.insert(70,grand,0);
+        auto son = tree.insert(119,father,0);
+        auto my_brother = tree.insert(121,father,1);
+        for(int i=0; i<3; i++)
+        {
+            tree.insert(23+i,my_brother,i);
+        }
+        auto grand_son = tree.insert(287,son,0);
+        for(int i=0; i<5; i++)
+        {
+            tree.insert(100+i,grand_son,i);
+        }
+
+        // grand_brother
+        auto uncle = tree.insert(701,grand_brother,0);
+        Drzewo<int>::iterator nephew = tree.insert(201,uncle,0);
+        for(int i=1; i<8; i++)
+        {
+            nephew = tree.insert(201-2*i,uncle,i); 
+        }
+        auto c = tree.insert(5,nephew,0);
+        tree.insert(4,c,0);
+        tree.insert(3,c,0);
+        tree.insert(2,c,0);
+        tree.insert(1,c,0);
+
+        Drzewo<int> mem_tree = tree;
+
+        // erasing
+                
+        size_t size = tree.size();
+
+        CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(father) == 2);
+        tree.erase(son);
+        CPPUNIT_ASSERT_EQUAL(true, size == tree.size() + 4 + 1 + 1);    
+        CPPUNIT_ASSERT_EQUAL(true, tree.getChild(father, 0) == my_brother);
+        CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(father) == 1);
+        CPPUNIT_ASSERT_EQUAL(true, *tree.getChild(father, 0) == 121);
+
+        size = tree.size();
+        tree.erase(nephew);
+        CPPUNIT_ASSERT_EQUAL(true, size == tree.size() + 4 + 1 + 1);
+        CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(uncle) == 3);
+
+        size = tree.size();
+        tree.erase(daughter);
+        CPPUNIT_ASSERT_EQUAL(true, size == tree.size() + 4 + 1);
+        CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(mom) == 1);
+        CPPUNIT_ASSERT_EQUAL(true, *tree.getChild(mom, 0) == 98);
     }
 };
 
@@ -486,7 +572,20 @@ public:
         other_tree.insert(10,child,0);
         other_tree.insert(13,child,1);
         Drzewo<int> tree = other_tree;
+
         CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
+
+        size_t other_root_children = other_tree.getNumberOfChildren(other_tree.root());
+        size_t tree_root_children = tree.getNumberOfChildren(tree.root());
+
+        CPPUNIT_ASSERT_EQUAL(true, other_root_children == tree_root_children);
+        CPPUNIT_ASSERT_EQUAL(true, *other_tree.root() == *tree.root());
+        CPPUNIT_ASSERT_EQUAL(true, other_tree.root() != tree.root());
+
+        auto child1 = other_tree.getChild(other_tree.root(), 0);
+        auto child2 = tree.getChild(tree.root(), 0);
+
+        CPPUNIT_ASSERT_EQUAL(true, child1 != child2);
     }
 
     /**
@@ -517,17 +616,111 @@ public:
     }
 };
 
+class IteratorTest : public TestFixture
+{
+public:
+
+    static Test* suite()
+    {
+        TestSuite* suite = new TestSuite("'ITERATOR' suite");
+
+        suite->addTest( new TestCaller<IteratorTest>("root_test", &IteratorTest::root_test ));
+        suite->addTest( new TestCaller<IteratorTest>("root_erase", &IteratorTest::root_erase ));
+        suite->addTest( new TestCaller<IteratorTest>("insert_get_child", &IteratorTest::insert_get_child ));
+        suite->addTest( new TestCaller<IteratorTest>("operator_asterisk", &IteratorTest::operator_asterisk ));
+        suite->addTest( new TestCaller<IteratorTest>("empty_tree", &IteratorTest::empty_tree ));
+        suite->addTest( new TestCaller<IteratorTest>("operator_inequal", &IteratorTest::operator_inequal ));
+        suite->addTest( new TestCaller<IteratorTest>("operator_equal", &IteratorTest::operator_equal ));
+
+        return suite;
+    }
+
+    /**
+     * Sprawdzono czy iterator po wstawieniu korzenia pokazuje na korzeń drzewa.
+     */
+    void root_test()
+    {
+        Drzewo<int> tree;
+        auto root = tree.insert(4,tree.end(),0);
+        CPPUNIT_ASSERT_EQUAL(true, root == tree.root());
+    }
+
+    /**
+     * Usunięto korzeń, iterator powinien pokazuwać na koniec drzewa.
+     */
+    void root_erase()
+    {
+        Drzewo<int> tree(4);
+        tree.erase(tree.root());
+        CPPUNIT_ASSERT_EQUAL(true, tree.root() == tree.end());
+    }
+
+    /**
+     * Sprawdzono czy iterator zwrócony przez insert i getChild pokazuje na ten sam element.
+     */
+    void insert_get_child()
+    {
+        Drzewo<int> tree(4);
+        tree.insert(3,tree.root(),0);
+        tree.insert(5,tree.root(),1);
+        auto it = tree.insert(6,tree.root(),2);
+        tree.insert(13,it,0);
+        auto child = tree.insert(20,it,0);
+        CPPUNIT_ASSERT_EQUAL(true, tree.getChild(it,0) == child);
+    }
+
+    /**
+     * Sprawdzono poprawność operatora* zwracającego wartość obiektu T przechowywanego w węźle.
+     */
+    void operator_asterisk()
+    {
+        Drzewo<char> tree('a');
+        CPPUNIT_ASSERT_EQUAL(true, *tree.root() == 'a');
+    }
+
+    /**
+     * Sprawdzono, iterator na korzeń pokazuje na koniec w przypadku utworzenia pustego drzewa.
+     */
+    void empty_tree()
+    {
+        Drzewo<double> tree;
+        CPPUNIT_ASSERT_EQUAL(true, tree.root() == tree.end());
+    }
+
+    /**
+     * Sprawdzenie poprawności działania operatora !=
+     */
+    void operator_inequal()
+    {
+        Drzewo<int> tree(4);
+        Drzewo<int> other_tree(tree);   
+        CPPUNIT_ASSERT_EQUAL(true, tree.root() != other_tree.root());
+    }
+
+    /**
+     * Sprawdzanie poprawności działania oepratora ==
+     */
+    void operator_equal()
+    {
+        Drzewo<double> tree(5.0);
+        auto child1 = tree.insert(4,tree.root(),0);
+        auto child2 = tree.insert(6,tree.root(),1);
+        CPPUNIT_ASSERT_EQUAL(false, child1 == child2);
+    }
+};
+
 int main()
 {
     CppUnit::TextUi::TestRunner runner;
 
-    runner.addTest( EmptyTest::suite() );
-    runner.addTest( SizeTest::suite() );
-    runner.addTest( GetNumberOfChildrenTest::suite() );
-    runner.addTest( GetChildTest::suite() );
-    runner.addTest( InsertTest::suite() );
-    runner.addTest( EraseTest::suite() );
-    runner.addTest( CopyTest::suite() );
+    runner.addTest( EmptyTest::suite()                      );
+    runner.addTest( SizeTest::suite()                       );
+    runner.addTest( GetNumberOfChildrenTest::suite()        );
+    runner.addTest( GetChildTest::suite()                   );
+    runner.addTest( InsertTest::suite()                     );
+    runner.addTest( EraseTest::suite()                      );
+    runner.addTest( CopyTest::suite()                       );
+    runner.addTest( IteratorTest::suite()                   );
 
     runner.run();
 
