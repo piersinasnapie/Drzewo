@@ -7,7 +7,7 @@
 #include <cppunit/extensions/TestFactoryRegistry.h>
 #include <cppunit/ui/text/TestRunner.h>
 
-#include "Drzewo.hpp"
+#include "drzewo.hpp"
 
 using namespace CppUnit;
 
@@ -438,7 +438,7 @@ public:
     }
 };
 
-class CopyConstructorTest : public TestFixture
+class CopyTest : public TestFixture
 {
 public:
 
@@ -446,12 +446,17 @@ public:
     {
         TestSuite* suite = new TestSuite("'COPY_CONSTRUCTOR' suite");
 
-        suite->addTest( new TestCaller<CopyConstructorTest>("copy_tree", &CopyConstructorTest::copy_tree ));
+        suite->addTest( new TestCaller<CopyTest>("copy_constructor", &CopyTest::copy_constructor ));
+        suite->addTest( new TestCaller<CopyTest>("operator_equal", &CopyTest::operator_equal ));
+        suite->addTest( new TestCaller<CopyTest>("operator_equal_non_empty", &CopyTest::operator_equal_non_empty ));
 
         return suite;
     }    
 
-    void copy_tree()
+    /**
+     * Utworzono drzewo za pomocą konstruktora kopiującego 
+     */
+    void copy_constructor()
     {
         Drzewo<int> other_tree(4);
         other_tree.insert(5,other_tree.root(),0);
@@ -463,6 +468,51 @@ public:
         other_tree.insert(10,child,0);
         other_tree.insert(13,child,1);
         Drzewo<int> tree(other_tree);
+        CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
+    }
+
+    /**
+     * Przypisano do pustego drzewa inne drzewo.
+     */
+    void operator_equal()
+    {
+        Drzewo<int> other_tree(4);
+        other_tree.insert(5,other_tree.root(),0);
+        auto parent = other_tree.insert(6,other_tree.root(),1);
+        auto uncle = other_tree.insert(7,other_tree.root(),2);
+        other_tree.insert(8,other_tree.root(),3);
+        other_tree.insert(10,parent,0);
+        auto child = other_tree.insert(11,uncle,0);
+        other_tree.insert(10,child,0);
+        other_tree.insert(13,child,1);
+        Drzewo<int> tree = other_tree;
+        CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
+    }
+
+    /**
+     * Przpisano do niepustego drzewa innego drzewo.
+     */
+    void operator_equal_non_empty()
+    {
+        Drzewo<int> other_tree(4);
+        other_tree.insert(5,other_tree.root(),0);
+        auto parent = other_tree.insert(6,other_tree.root(),1);
+        auto uncle = other_tree.insert(7,other_tree.root(),2);
+        other_tree.insert(8,other_tree.root(),3);
+        other_tree.insert(10,parent,0);
+        auto child = other_tree.insert(11,uncle,0);
+        other_tree.insert(10,child,0);
+        other_tree.insert(13,child,1);
+
+        Drzewo<int> tree(5);
+        tree.insert(13,tree.root(),0);
+        auto parent2 = tree.insert(11,tree.root(),3);
+        tree.insert(5,parent2,0);
+        auto son = tree.insert(10,parent2,0);
+        tree.insert(1,son,0);
+        tree.insert(12,son,1);
+
+        tree = other_tree;
         CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
     }
 };
@@ -477,7 +527,7 @@ int main()
     runner.addTest( GetChildTest::suite() );
     runner.addTest( InsertTest::suite() );
     runner.addTest( EraseTest::suite() );
-    runner.addTest( CopyConstructorTest::suite() );
+    runner.addTest( CopyTest::suite() );
 
     runner.run();
 

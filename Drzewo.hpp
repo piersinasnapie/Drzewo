@@ -1,5 +1,5 @@
-#ifndef Drzewo_hpp
-#define Drzewo_hpp
+#ifndef drzewo_hpp
+#define drzewo_hpp
 
 #include <vector>
 #include <stdexcept>
@@ -16,13 +16,11 @@ private:
 		Node* parent;
         Node* brother;
 		std::vector<Node*> children; // list of children
-        // int current_child;
 
 		Node(const T& _value=T(), Node* _parent=nullptr, Node* _brother=nullptr):
             value(_value),
             parent(_parent),
             brother(_brother)
-            // current_child(_current)
             {}
 		Node(T && _value, Node* _parent=nullptr, Node* _brother=nullptr): 
             value(std::move(_value)), 
@@ -30,8 +28,7 @@ private:
             brother(_brother)
             {}
         // TODO
-        ~Node()
-        {}
+        ~Node(){}
 	};
 
     void delete_node(Node* node)
@@ -70,6 +67,49 @@ private:
         }
     }
 
+    inline void copy_elements(Node* current_root, Node* other_root, size_t size)
+    {
+        Node* other_current = other_root;
+        Node* current = current_root;
+        
+        while(number_of_nodes < size)
+        {
+            if(other_current->children.size())
+            {
+                for(Node* n : other_current->children)
+                {
+                    Node* parent = current;
+                    T val = n->value;
+                    current->children.push_back( new Node(val,parent,nullptr) );
+                    number_of_nodes++;
+                }
+                if(current->children.size() > 1)
+                {
+                    for(int i=1; i<current->children.size(); i++)
+                    {
+                        current->children[i-1]->brother = current->children[i];
+                    }
+                }
+
+                other_current = other_current->children[0];
+                current = current->children[0];
+            }
+            else
+            {
+                if(other_current->brother != nullptr)
+                {
+                    other_current = other_current->brother;
+                    current = current->brother;
+                }
+                else
+                {
+                    other_current = other_current->parent->brother;
+                    current = current->parent->brother;
+                }
+            }
+        }
+    }
+
 	Node* root_node;
 	size_t number_of_nodes;
 
@@ -101,33 +141,33 @@ public:
 
         iterator& operator++()
         {
-            ptr = next;
-            std::cout << "node: " << ptr->value << std::endl;
-            if(next->children.size() != 0)
-            {
-                next = next->children[0];
-                std::cout << "ma dziecko - next: " << next->value << std::endl;
-            }
-            else if(next->brother != nullptr)
-            {
-                next = next->brother;
-                std::cout << "ma brata - next: " << next->value << std::endl;
-            }
-            else if(next->brother == nullptr)
-            {
-                std::cout << "ma tylko rodzica - next: " << next->value << std::endl;
-                next = next->parent->brother;
-            }
-            else
-            {
-                next = nullptr;
-            }
+            // ptr = next;
+            // std::cout << "node: " << ptr->value << std::endl;
+            // if(next->children.size() != 0)
+            // {
+            //     next = next->children[0];
+            //     std::cout << "ma dziecko - next: " << next->value << std::endl;
+            // }
+            // else if(next->brother != nullptr)
+            // {
+            //     next = next->brother;
+            //     std::cout << "ma brata - next: " << next->value << std::endl;
+            // }
+            // else if(next->brother == nullptr)
+            // {
+            //     std::cout << "ma tylko rodzica - next: " << next->value << std::endl;
+            //     next = next->parent->brother;
+            // }
+            // else
+            // {
+            //     next = nullptr;
+            // }
             return *this;
         }
 
         T* operator->()
         {
-            return ptr->value;
+            return &ptr->value;
         } 
 
         bool operator!=(const iterator& it){ return this->next != it.next; }
@@ -141,57 +181,31 @@ public:
         {}
 
     // TODO
-    Drzewo(const Drzewo& other_tree)
+    Drzewo(const Drzewo& other_tree): number_of_nodes(0)
     {
-        // Node* other_root = other_tree.root().ptr;
-        // root_node = new Node(other_root->value);        
-        // number_of_nodes++;
+        Node* other_root = other_tree.root().ptr;
+        root_node = new Node(other_root->value);        
+        number_of_nodes++;
 
-        // Node* other_current = other_root;
-        // Node* current = root_node;
-        
-        // while(number_of_nodes < other_tree.size())
-        // {
-        //     if(other_current->children.size())
-        //     {
-        //         for(Node* n : other_current->children)
-        //         {
-        //             Node* parent = current;
-        //             T val = n->value;
-        //             current->children.push_back( new Node(val,parent,nullptr) );
-        //             number_of_nodes++;
-        //         }
-        //         if(current->children.size() > 1)
-        //         {
-        //             for(int i=1; i<current->children.size(); i++)
-        //             {
-        //                 current->children[i-1]->brother = current->children[i];
-        //             }
-        //         }
+        copy_elements(root_node, other_root, other_tree.size());
+    }
+    
+    Drzewo & operator=(const Drzewo& other_tree)
+    {
+        if(number_of_nodes)
+        {
+            delete_tree();
+        }
 
-        //         other_current = other_current->children[0];
-        //         current = current->children[0];
-        //     }
-        //     else
-        //     {
-        //         if(other_current->brother != nullptr)
-        //         {
-        //             other_current = other_current->brother;
-        //             current = current->brother;
-        //         }
-        //         else
-        //         {
-        //             other_current = other_current->parent->brother;
-        //             current = current->parent->brother;
-        //         }
-        //     }
-        // }
-        // std::cout << "my tree: " << number_of_nodes << std::endl;
-        // std::cout << "o_tree " << other_tree.size() << std::endl;
+        Node* other_root = other_tree.root().ptr;
+        root_node = new Node(other_root->value);        
+        number_of_nodes++;
+
+        copy_elements(root_node, other_root, other_tree.size());
+
+        return *this;
     }
 
-    // TODO
-    Drzewo & operator=(const Drzewo& other_tree);
     ~Drzewo()
     {
         delete_tree();
@@ -240,8 +254,9 @@ public:
             root_node = nullptr;
             return;
         }
-        int position = it.ptr - it.ptr->parent->children[0];
-        it.ptr->parent->children.erase(it.ptr->parent->children.begin() + position);
+
+        auto find = std::find(it.ptr->parent->children.begin(),it.ptr->parent->children.end(),it.ptr);
+        it.ptr->parent->children.erase(find);
         delete_node(it.ptr);
     }
 
