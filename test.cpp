@@ -104,8 +104,10 @@ public:
         Drzewo<double> other_tree;
         tree = other_tree;
         CPPUNIT_ASSERT_EQUAL(true, tree.empty());
+        CPPUNIT_ASSERT_EQUAL(true, other_tree.empty());
     }
 };
+
 
 class SizeTest : public TestFixture
 {
@@ -268,6 +270,7 @@ public:
     }
 };
 
+
 class GetChildTest : public TestFixture
 {
 public:
@@ -309,6 +312,7 @@ public:
         CPPUNIT_ASSERT_EQUAL(true , tree.getChild(root, 1) == it);   
     }
 };
+
 
 class InsertTest : public TestFixture
 {
@@ -363,6 +367,7 @@ public:
         CPPUNIT_ASSERT_EQUAL(true, tree.getChild(root,2) == it);
     }
 };
+
 
 class EraseTest : public TestFixture
 {
@@ -524,6 +529,7 @@ public:
     }
 };
 
+
 class CopyTest : public TestFixture
 {
 public:
@@ -615,6 +621,7 @@ public:
         CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
     }
 };
+
 
 class IteratorTest : public TestFixture
 {
@@ -708,6 +715,7 @@ public:
         CPPUNIT_ASSERT_EQUAL(false, child1 == child2);
     }
 };
+
 
 int main()
 {

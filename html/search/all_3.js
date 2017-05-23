@@ -1,0 +1,21 @@
+var searchData=
+[
+  ['empty',['empty',['../class_drzewo.html#abee09a10667c74ea82f4325addfac3df',1,'Drzewo']]],
+  ['empty_5fother_5ftree',['empty_other_tree',['../class_empty_test.html#a6373058c0b937d07bb07b8482f663315',1,'EmptyTest']]],
+  ['empty_5ftree',['empty_tree',['../class_iterator_test.html#a826f30ef86193414b8ceb03e76592b37',1,'IteratorTest']]],
+  ['empty_5fwith_5fchildren_5ferase_5froot',['empty_with_children_erase_root',['../class_empty_test.html#a07de70993f853c66e95865432fc4ce7f',1,'EmptyTest']]],
+  ['empty_5fwith_5froot',['empty_with_root',['../class_empty_test.html#abd96646c19026d62a5317285cbf5f49b',1,'EmptyTest']]],
+  ['empty_5fwith_5froot_5ferase',['empty_with_root_erase',['../class_empty_test.html#a5112f76f08ce5f0b52016ea8a8afff4b',1,'EmptyTest']]],
+  ['empty_5fwith_5froot_5finsert_5ferase',['empty_with_root_insert_erase',['../class_empty_test.html#a6a62d370484dd86a856514d168d176d4',1,'EmptyTest']]],
+  ['empty_5fwithout_5froot',['empty_without_root',['../class_empty_test.html#a27a72313c820dae24223b04c4f1cc376',1,'EmptyTest']]],
+  ['empty_5fwithout_5froot_5finsert',['empty_without_root_insert',['../class_empty_test.html#ad17133b184176d9d8b0511168d13ca6b',1,'EmptyTest']]],
+  ['emptytest',['EmptyTest',['../class_empty_test.html',1,'']]],
+  ['end',['end',['../class_drzewo.html#aea36f65c42299dd029a38fbf9ed346fb',1,'Drzewo']]],
+  ['erase',['erase',['../class_drzewo.html#a338ae0e9b48ee6d513b9f99c81da3d4b',1,'Drzewo']]],
+  ['erase_5fchild_5fshift',['erase_child_shift',['../class_erase_test.html#a0897542be38d32150b6c080449bf0b2d',1,'EraseTest']]],
+  ['erase_5fmany_5fchildren',['erase_many_children',['../class_erase_test.html#a7c3b732833940974b289fd52f1190306',1,'EraseTest']]],
+  ['erase_5fmiddle_5fchild',['erase_middle_child',['../class_erase_test.html#ae6bc0aa4ecaa1f2966a0e4f971d229d1',1,'EraseTest']]],
+  ['erase_5froot',['erase_root',['../class_erase_test.html#aa245715a2bbbcf0bd6abcca1a0992055',1,'EraseTest']]],
+  ['erase_5froot_5fvalue',['erase_root_value',['../class_erase_test.html#a3b1971101ff3dc813242f02a0cff68bf',1,'EraseTest']]],
+  ['erasetest',['EraseTest',['../class_erase_test.html',1,'']]]
+];
