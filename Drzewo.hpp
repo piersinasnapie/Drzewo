@@ -5,6 +5,10 @@
 #include <stdexcept>
 #include <algorithm>
 
+/**
+ * Reprezentacja drzewa, w którm każdy węzeł posiada wskaźnik do swojego rodzica, swojego brata oraz
+ * listę dzieci przechowywanych w wektorze.
+ */
 template<typename T>
 class Drzewo
 {
@@ -123,12 +127,10 @@ public:
     private:
 
         Node* ptr;
-        // Node* next;
         friend class Drzewo;
 
         iterator(Node* _ptr=nullptr): 
             ptr(_ptr)
-            // next(_next)
             {}
 
     public:
@@ -174,13 +176,31 @@ public:
         bool operator==(const iterator& it){ return this->ptr == it.ptr; }
     };
 
+    /** 
+     * Konstruktor domyślny. Inicjuje wkaźnik do korzenia na 'nullptr'. 
+     * Nowo utworzone drzewo posiada 0 węzłów. 
+     * Zostanie utworzone puste drzewo.
+     */
 	Drzewo(): root_node(nullptr), number_of_nodes(0){}
+
+    /**
+     * Konstruktor inicjujący korzeń drzewa wartością 'root_vale'.
+     * Zostanie utworzone drzewo z jednym węzłem.
+     *
+     * @param root_value obiekt typu T.
+     */
     Drzewo(const T& root_value): 
         root_node(new Node(root_value)), 
         number_of_nodes(1) 
         {}
 
-    // TODO
+    /**
+     * Konstruktor kopiujący, przyjmujący stałą referencję do innego drzewa.
+     * Wszystkie elementy drzewa kopiowanego zostają dodane do obecnie tworzonego drzewa,
+     * zachowując porządek i kolejność elementów.
+     *
+     * @param other_tree obiekt klasy Drzewo<>.
+     */
     Drzewo(const Drzewo& other_tree): number_of_nodes(0)
     {
         if(other_tree.root().ptr != nullptr)
@@ -193,6 +213,15 @@ public:
         }
     }
     
+    
+    /**
+     * Operator przypisania drzewa. Przypisuje wszystkie elementy kopiowanego drzewa
+     * do obecnie tworzonego drzewa. Jeśli obecne drzewo nie jest puste, następuje wyczyszczenie
+     * wszystkich elementów drzewa, a następnie kopia.
+     * W przypadku wykonania operacji na pustych drzewach zostanie zwrócone puste drzewo.
+     *
+     * @param other_tree obiekt klasy Drzewo<>.
+     */
     Drzewo & operator=(const Drzewo& other_tree)
     {
         if(root_node != nullptr && other_tree.root().ptr != nullptr)
@@ -210,7 +239,11 @@ public:
         }
         return *this;
     }
-
+    
+    /**
+     * Destruktor, dealokuje pamięć, która była używana przez drzewo.
+     * Opróżnia wszystkie informacje zawarte w pojedynczych węzłach drzewa.
+     */
     ~Drzewo()
     {
         delete_tree();
