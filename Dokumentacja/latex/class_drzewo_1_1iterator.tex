@@ -1,0 +1,142 @@
+\hypertarget{class_drzewo_1_1iterator}{}\section{Dokumentacja klasy Drzewo$<$ T $>$\+:\+:iterator}
+\label{class_drzewo_1_1iterator}\index{Drzewo$<$ T $>$\+::iterator@{Drzewo$<$ T $>$\+::iterator}}
+
+
+{\ttfamily \#include $<$drzewo.\+hpp$>$}
+
+\subsection*{Typy publiczne}
+\begin{DoxyCompactItemize}
+\item 
+typedef T \hyperlink{class_drzewo_1_1iterator_a7ba4387023d41aafa83791b42fc5b5ee}{value\+\_\+type}
+\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_drzewo_1_1iterator_a279751514e51594342daa7a7ed501a38}{iterator} ()
+\item 
+\hyperlink{class_drzewo_1_1iterator_a627d8a55a11ad8be75493634c6fe07b2}{iterator} (const \hyperlink{class_drzewo_1_1iterator}{iterator} \&\hyperlink{class_drzewo_1_1iterator}{iterator})
+\item 
+T \& \hyperlink{class_drzewo_1_1iterator_ab2ee76d0390832e9bed32a829f08f328}{operator$\ast$} ()
+\item 
+\hyperlink{class_drzewo_1_1iterator}{iterator} \& \hyperlink{class_drzewo_1_1iterator_a8b67f4409ee4532a89e745744ba6f8b3}{operator++} ()
+\item 
+T $\ast$ \hyperlink{class_drzewo_1_1iterator_ac982660e25eb9720b5c81b6ccff0559e}{operator-\/$>$} ()
+\item 
+bool \hyperlink{class_drzewo_1_1iterator_afb65420073bdc0e231f0752227de5dcc}{operator!=} (const \hyperlink{class_drzewo_1_1iterator}{iterator} \&it) const
+\item 
+bool \hyperlink{class_drzewo_1_1iterator_ab701b082f0d712968b2fa1d45e3595a8}{operator==} (const \hyperlink{class_drzewo_1_1iterator}{iterator} \&it) const
+\end{DoxyCompactItemize}
+\subsection*{Przyjaciele}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_drzewo_1_1iterator_a1c4e4c3515fb1b999118d69c354d7efd}\label{class_drzewo_1_1iterator_a1c4e4c3515fb1b999118d69c354d7efd}} 
+class {\bfseries Drzewo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+\subsubsection*{template$<$typename T$>$\newline
+class Drzewo$<$ T $>$\+::iterator}
+
+Klasa pomocnicza reprezentująca wskaźnik na pojedyczny element w kontenerze. Za pomocą obiektów klasy iterator użytkownik biblioteki posiada możliwość wykonywania pewnych operacji. 
+
+\subsection{Dokumentacja składowych definicji typu}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_a7ba4387023d41aafa83791b42fc5b5ee}\label{class_drzewo_1_1iterator_a7ba4387023d41aafa83791b42fc5b5ee}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!value\+\_\+type@{value\+\_\+type}}
+\index{value\+\_\+type@{value\+\_\+type}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{value\+\_\+type}{value\_type}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef T \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::\hyperlink{class_drzewo_1_1iterator_a7ba4387023d41aafa83791b42fc5b5ee}{iterator\+::value\+\_\+type}}
+
+T 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_a279751514e51594342daa7a7ed501a38}\label{class_drzewo_1_1iterator_a279751514e51594342daa7a7ed501a38}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{iterator()}{iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Konstruktor domyślny tworzący iterator pokazujący na koniec kontenera. \mbox{\Hypertarget{class_drzewo_1_1iterator_a627d8a55a11ad8be75493634c6fe07b2}\label{class_drzewo_1_1iterator_a627d8a55a11ad8be75493634c6fe07b2}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{iterator()}{iterator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::iterator (\begin{DoxyParamCaption}\item[{const \hyperlink{class_drzewo_1_1iterator}{iterator} \&}]{iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Konstruktor kopiujący ustawiający wartość wskaźnika na wskaźnik iteratora przesłanego do konstruktora.
+
+
+\begin{DoxyParams}{Parametry}
+{\em iterator} & iterator, którego wskaźnik zostanie skopiowany. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_afb65420073bdc0e231f0752227de5dcc}\label{class_drzewo_1_1iterator_afb65420073bdc0e231f0752227de5dcc}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_drzewo_1_1iterator}{iterator} \&}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zwraca \textquotesingle{}true\textquotesingle{} jeśli iterator pokazuje na inny węzeł niż iterator przesyłany do funkcji.
+
+\begin{DoxyReturn}{Zwraca}
+true -\/ gdy obiekty na które pokazują iteratory są różne, flase -\/ gdy obiekty na które pokazują iteratory są równe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_ab2ee76d0390832e9bed32a829f08f328}\label{class_drzewo_1_1iterator_ab2ee76d0390832e9bed32a829f08f328}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \& \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zwraca referencję do obiektu typu przechowywanego w pojedynczym węźle, wskazywanym przez iterator.
+
+\begin{DoxyReturn}{Zwraca}
+referencja do obiektu typu T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_a8b67f4409ee4532a89e745744ba6f8b3}\label{class_drzewo_1_1iterator_a8b67f4409ee4532a89e745744ba6f8b3}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::\hyperlink{class_drzewo_1_1iterator}{iterator} \& \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Operator pre-\/inkrementacji dla klasy iterator. Przechodzenie po drzewie następuje w porządku\+: P\+R\+E-\/\+O\+R\+D\+ER. Zwraca referencję do samego siebie (obiektu klasy iterator).
+
+\begin{DoxyReturn}{Zwraca}
+Wskaźnik do samego siebie. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_ac982660e25eb9720b5c81b6ccff0559e}\label{class_drzewo_1_1iterator_ac982660e25eb9720b5c81b6ccff0559e}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T $\ast$ \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zwraca adres do obiektu typu T przechowywanego we wskaźniku.
+
+\begin{DoxyReturn}{Zwraca}
+adres obiektu typu T 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_drzewo_1_1iterator_ab701b082f0d712968b2fa1d45e3595a8}\label{class_drzewo_1_1iterator_ab701b082f0d712968b2fa1d45e3595a8}} 
+\index{Drzewo\+::iterator@{Drzewo\+::iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!Drzewo\+::iterator@{Drzewo\+::iterator}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \hyperlink{class_drzewo}{Drzewo}$<$ T $>$\+::iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_drzewo_1_1iterator}{iterator} \&}]{it }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Zwraca \textquotesingle{}true\textquotesingle{} jeśli iterator pokazuje na ten sam węzeł niż iterator przesyłany do funkcji.
+
+\begin{DoxyReturn}{Zwraca}
+true -\/ gdy obiekty na które pokazują iteratory są równe, flase -\/ gdy obiekty na które pokazują iteratory są różne 
+\end{DoxyReturn}
+
+
+Dokumentacja dla tej klasy została wygenerowana z pliku\+:\begin{DoxyCompactItemize}
+\item 
+drzewo.\+hpp\end{DoxyCompactItemize}

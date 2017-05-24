@@ -10,7 +10,7 @@
  * Kontener reprezentujący strukturę danych - Drzewo. Posiada korzeń, który jest jednocześnie
  * węzłem/elementem w kontenerze. Istnieje możliwość utworzenia pustego drzewa. 
  * Dostęp do elementów kontenera jest udostępniony za pomocą pomocniczych
- * obiektów klasy iterator. Obiekty 
+ * obiektów klasy iterator. 
  *
  */
 template<typename T>
@@ -18,6 +18,14 @@ class Drzewo
 {
 private:
 
+    /** 
+     * Struktura reprezentująca pojedyczny wezeł w drzewie.
+     * Zawiera w sobie:
+     *  - Obiekt typu T
+     *  - wskaźnik do węzła będącego rodzicem
+     *  - wskaźnik do węzłą będącego bratem
+     *  - listę dzieci uporządkowaną w wektor
+     */
 	struct Node
 	{
 		T value;
@@ -124,13 +132,9 @@ private:
 
 public:
 
-    /** 
-     * \typedef T
-     */
-    typedef T value_type;
-    /** 
-     * \typedef value_type& 
-    */
+    /** T */
+    typedef T value_type; 
+    /** value_type& */
     typedef T& reference; 
 
     /**
@@ -153,18 +157,18 @@ public:
 
     public:
 
-        typedef T value_type; /** T */
+        /** T */
+        typedef T value_type; 
 
         /**
          * Konstruktor domyślny tworzący iterator pokazujący na koniec kontenera.
          * 
-         * @param  (brak)
          */
         inline iterator();
 
         /**
          * Konstruktor kopiujący ustawiający wartość wskaźnika na 
-         * wskaźnik pokazywany przez iterator.
+         * wskaźnik iteratora przesłanego do konstruktora.
          *
          * @param  iterator iterator, którego wskaźnik zostanie skopiowany. 
          */
@@ -174,7 +178,6 @@ public:
          * Zwraca referencję do obiektu typu przechowywanego w pojedynczym węźle,
          * wskazywanym przez iterator.
          *
-         * @param  (brak)
          * @return  referencja do obiektu typu T
          */
         inline T& operator*();
@@ -182,9 +185,8 @@ public:
         /**
          * Operator pre-inkrementacji dla klasy iterator.
          * Przechodzenie po drzewie następuje w porządku:
-         * PRE-ORDER.
+         * PRE-ORDER. Zwraca referencję do samego siebie (obiektu klasy iterator).
          * 
-         * @param  (brak)
          * @return  Wskaźnik do samego siebie.
          */
         iterator& operator++();
@@ -192,7 +194,6 @@ public:
         /**
          * Zwraca adres do obiektu typu T przechowywanego we wskaźniku.
          * 
-         * @param  (brak)
          * @return adres obiektu typu T
          */
         inline T* operator->();
@@ -217,7 +218,8 @@ public:
     /** 
      * Konstruktor domyślny. Inicjuje wkaźnik do korzenia na 'nullptr'. 
      * Nowo utworzone drzewo posiada 0 węzłów. 
-     * Zostanie utworzone puste drzewo.
+     * Zostanie utworzone puste drzewo. 
+     *
      */
 	Drzewo();
 
@@ -230,9 +232,9 @@ public:
     Drzewo(const T& root_value);
 
     /**
-     * Konstruktor kopiujący, przyjmujący stałą referencję do innego drzewa.
+     * Konstruktor kopiujący, przyjmujący stałą referencję do obiektu klasy Drzewo.
      * Wszystkie elementy drzewa kopiowanego zostają dodane do obecnie tworzonego drzewa,
-     * zachowując porządek, kolejność oraz hierarchię elementów.
+     * zachowując porządek, kolejność oraz hierarchię węzłów w kopiowanym drzewie.
      *
      * @param  other_tree obiekt klasy Drzewo<>.
      */
@@ -241,7 +243,7 @@ public:
     /**
      * Operator przypisania drzewa. Przypisuje wszystkie elementy kopiowanego drzewa
      * do obecnie tworzonego drzewa. Jeśli obecne drzewo nie jest puste, następuje wyczyszczenie
-     * wszystkich elementów drzewa, a następnie kopia.
+     * wszystkich elementów drzewa, a następnie zostają kopiowane elementy z drugiego drzewa.
      * W przypadku wykonania operacji na pustych drzewach zostanie zwrócone puste drzewo.
      *
      * @param other_tree obiekt klasy Drzewo<>.
@@ -252,31 +254,31 @@ public:
      * Destruktor, zwalnia pamięć, która była używana przez drzewo.
      * Usuwa wszystkie informacje zawarte w pojedynczych węzłach drzewa.
      *
-     * @param  (brak)
      */
     ~Drzewo();
 
     /**
      * Wstawia element o podanej wartości do drzewa, do listy dzieci rodzica, wskazywanego
-     * przez iterator, na określoną pozycję. W przypadku pustego drzewa oraz podania iteratora wskazującego na koniec kontenera
+     * przez iterator, na określoną przez indeks pozycję. Zwraca iterator pokazujący na 
+     * nowo dodany węzeł. W przypadku pustego drzewa oraz podania iteratora wskazującego na koniec kontenera
      * oraz indexu równego '0' zostanie utworzony korzeń zawierający obiekt 'value'. Zwrócony zostanie iterator
      * pokazujący na korzeń drzewa.
      * 
      * W przypadku wywołania procedury insert z argumentami: iterator pokazujący na koniec oraz indexem równym 0,
      * na niepustym drzewie zachowanie funkcji jest niezdefiniowane. 
      *
+     * W przypadku podania iteratora wskazującego na koniec kontenera oraz indeksu różnego 
+     * od 0 operacja skutkuje niezdefiniowanym zachowaniem.
+     * 
      * W pozostałych przypadkach element o wartości 'value' zostanie wstawiony
      * do listy dzieci węzła-rodzica pokazywanego przez iterator przed węzeł znajdujący się
      * na miejscu nr 'index'.
      * Na koniec procedury zostanie zwiększona liczba elementów w drzewie. 
-     * 
-     * W przypadku podania iteratora wskazującego na koniec kontenera oraz indeksu różnego 
-     * od 0 operacja skutkuje niezdefiniowanym zachowaniem.
      *  
      * @param  value  obiekt typu T
      * @param  parent iterator pokazujący na węzeł-rodzic
      * @param  index  numer pozycji na liście dzieci rodzica
-     * @return  iterator pokazujący na nowo wstawione dziecko
+     * @return  iterator pokazujący na nowo wstawiony węzeł
      */
 	iterator insert(const T& value, iterator parent, std::size_t index);
 
@@ -293,31 +295,32 @@ public:
     void erase(const iterator& it);
 
     /**
-     * Zwraca dziecko znajdujące się w liście dzieci węzła-rodzica wskazanego przez
-     * iterator, na miejscu o podanym indeksie. W przypadku podania iteratora wskazującego
+     * Zwraca iterator pokazujący na dziecko znajdujące się w liście dzieci węzła-rodzica wskazanego przez
+     * iterator, na miejscu o podanym indeksie. 
+     * 
+     * W przypadku podania iteratora wskazującego
      * na koniec kontenera operacja skutkuje niezdefiniowanym zachowaniem. 
      * 
      * W przypaku podania nieprawidłowego indeksu dziecka operacja skutkuje 
      * niezdefiniowanym zachowaniem.
      * 
      * @param  parent iterator na wezeł-rodzica
-     * @param  index numer dziecka w liście dzieci rodzica
+     * @param  index pozycja dziecka w liście dzieci rodzica
      * @return  iterator pokazujący na dziecko znajdujące się na danej pozycji
      */
     inline iterator getChild(const iterator& parent, std::size_t index);
 
     /**
-     * Zwraca iterator pokazujący na pierwszy element w drzewie.
+     * Zwraca iterator pokazujący na pierwszy element w drzewie - korzeń drzewa.
      * 
-     * @param  (brak)
      * @return  iterator pokazujący na pierwszy element w drzewie.
      */
     inline iterator begin() const;
 
     /**
      * Zwraca iterator pokazujący na element za ostatnim elementem w drzewie.
+     * Pokazuje na rodzica(węzeł) korzenia, który jest wskaźnikiem na 'nullptr'.
      * 
-     * @param  (brak)
      * @return  iterator  
      */
     inline iterator end() const;
@@ -325,7 +328,6 @@ public:
     /**
      * Zwraca iterator pokazujący na korzeń drzewa.
      * 
-     * @param  (brak)
      * @return  iterator pokazujący na korzeń drzewa.
      */
     inline iterator root() const;
@@ -333,7 +335,6 @@ public:
     /**
      * Zwraca wartość 'true' jeśli ilość węzłów w drzewie wynosi 0.
      * 
-     * @param  (brak)
      * @return  true - jeżeli liczba węzłów w drzewie równa się 0 false - jeżeli liczba węzłów w drzwie jest większa od 0
      */
     inline bool empty() const;
@@ -341,8 +342,7 @@ public:
     /**
      * Zwraca liczbę elementów występujących w drzewie.
      * 
-     * @param  (brak)
-     * @return  Liczba dzieci w drzewie.
+     * @return  Liczba węzłów w drzewie.
      */
     inline std::size_t size() const;
 
@@ -354,7 +354,7 @@ public:
      * na koniec kontenera operacja skutkuje niezdefiniowanym zachowaniem.
      * 
      * @param  parent iterator pokazujący na węzeł.
-     * @return  liczba dzieci podanego rodzica.
+     * @return  liczba węzłów-dzieci podanego rodzica.
      */
     inline int getNumberOfChildren(const iterator& parent);
 };

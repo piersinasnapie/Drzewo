@@ -21,6 +21,9 @@ public:
 
         suite->addTest(new TestCaller<IteratorTest>("show_big_tree", &IteratorTest::show_big_tree ));
         suite->addTest(new TestCaller<IteratorTest>("traverse_empty_tree", &IteratorTest::traverse_empty_tree ));
+        suite->addTest(new TestCaller<IteratorTest>("oprator_increment_brother", &IteratorTest::oprator_increment_brother ));
+        suite->addTest(new TestCaller<IteratorTest>("operator_increment_child", &IteratorTest::operator_increment_child ));
+        suite->addTest(new TestCaller<IteratorTest>("operator_increment_uncle", &IteratorTest::operator_increment_uncle ));
     
         return suite;
     }
@@ -104,8 +107,48 @@ public:
         }
     }
 
-    
+    /**
+     * Sprawdzenie popraności operatora ++ dla węzłów będacych bracmi.
+     */
+    void oprator_increment_brother()
+    {
+        Drzewo<int> tree(5);
+        tree.insert(1,tree.root(),0);
+        auto it = tree.insert(2,tree.root(),1);
+        auto brother = tree.insert(3,tree.root(),2);
+        ++it;
+        CPPUNIT_ASSERT_EQUAL(true, it == brother);
+    }
 
+    /**
+     * Sprzawdzenie poprawności operator ++ dla węzłów będących w relacji
+     * rodzic-dziecko.
+     */
+    void operator_increment_child()
+    {   
+        Drzewo<int> tree(5);
+        tree.insert(1,tree.root(),0);
+        auto it = tree.insert(2,tree.root(),1);
+        tree.insert(3,tree.root(),2);
+        auto child = tree.insert(12,it,0);
+        ++it;
+        CPPUNIT_ASSERT_EQUAL(true, it == child);
+    }
+
+    /**
+     * Sprzawdzenie poprawności operator ++ dla węzłów będących w relacji
+     * dziecko-wujek.
+     */
+    void operator_increment_uncle()
+    {   
+        Drzewo<int> tree(5);
+        tree.insert(1,tree.root(),0);
+        auto it = tree.insert(2,tree.root(),1);
+        auto uncle = tree.insert(3,tree.root(),2);
+        auto child = tree.insert(12,it,0);
+        ++child;
+        CPPUNIT_ASSERT_EQUAL(true, uncle == child);
+    }
 };
 
 
