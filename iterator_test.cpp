@@ -91,6 +91,13 @@ public:
         {
             CPPUNIT_ASSERT_EQUAL(true, *tree_it == *other_tree_it);
             CPPUNIT_ASSERT_EQUAL(true, tree_it != other_tree_it);
+            CPPUNIT_ASSERT_EQUAL(true, tree.getNumberOfChildren(tree_it) == other_tree.getNumberOfChildren(other_tree_it));
+            if(tree.getNumberOfChildren(tree_it) && other_tree.getNumberOfChildren(other_tree_it))
+            {   
+                auto v1 = *tree.getChild(tree_it,0);
+                auto v2 = *tree.getChild(other_tree_it,0);
+                CPPUNIT_ASSERT_EQUAL(true, v1 == v2);
+            }
 
             tree_it++;
             ++other_tree_it;
