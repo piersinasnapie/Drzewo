@@ -1,0 +1,88 @@
+# File for suppressing errors found in pid 4341: "myapp.x"
+
+# Suppression for Error #1
+POSSIBLE LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!main
+
+## Mod+offs-style suppression for Error #1:
+POSSIBLE LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x1526>
+<myapp.x+0x1634>
+<myapp.x+0x27ac>
+
+# Suppression for Error #2
+LEAK
+name=Error #2 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!main
+
+## Mod+offs-style suppression for Error #2:
+LEAK
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x1526>
+<myapp.x+0x1634>
+<myapp.x+0x157f>
+<myapp.x+0x27d5>
+
+# Suppression for Error #3
+LEAK
+name=Error #3 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!main
+
+## Mod+offs-style suppression for Error #3:
+LEAK
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x19fb>
+<myapp.x+0x1a74>
+<myapp.x+0x2898>
+
+# Suppression for Error #4
+LEAK
+name=Error #4 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!ms::operator+
+myapp.x!main
+
+## Mod+offs-style suppression for Error #4:
+LEAK
+name=Error #4 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x1526>
+<myapp.x+0x1634>
+<myapp.x+0x1dbb>
+<myapp.x+0x2961>
+
+# Suppression for Error #5
+LEAK
+name=Error #5 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!ms::operator+
+myapp.x!main
+
+## Mod+offs-style suppression for Error #5:
+LEAK
+name=Error #5 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x1526>
+<myapp.x+0x1634>
+<myapp.x+0x1dbb>
+<myapp.x+0x29e1>
+

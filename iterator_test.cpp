@@ -83,11 +83,14 @@ public:
         other_tree = tree;
 
         auto tree_it = tree.begin();
-        auto other_tree_it = tree.begin(); 
+        auto other_tree_it = other_tree.begin(); 
+
+        CPPUNIT_ASSERT_EQUAL(true, tree.size() == other_tree.size());
 
         while( tree_it != tree.end() && other_tree_it != other_tree.end() )
         {
-            CPPUNIT_ASSERT_EQUAL(true, tree_it == other_tree_it);
+            CPPUNIT_ASSERT_EQUAL(true, *tree_it == *other_tree_it);
+            CPPUNIT_ASSERT_EQUAL(true, tree_it != other_tree_it);
 
             ++tree_it;
             ++other_tree_it;

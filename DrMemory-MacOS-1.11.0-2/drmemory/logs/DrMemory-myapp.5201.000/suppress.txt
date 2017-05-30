@@ -1,0 +1,42 @@
+# File for suppressing errors found in pid 5201: "myapp"
+
+# Suppression for Error #1
+LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31800>
+<myapp+0x9db>
+
+# Suppression for Error #2
+LEAK
+name=Error #2 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new
+myapp!main
+
+## Mod+offs-style suppression for Error #2:
+LEAK
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31800>
+<myapp+0xa23>
+
+# Suppression for Error #3
+LEAK
+name=Error #3 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new
+myapp!ListaPowiazan::dodajPowiazanie
+myapp!Koralik::dodajPowiazanie
+myapp!main
+
+## Mod+offs-style suppression for Error #3:
+LEAK
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31800>
+<myapp+0x149a>
+<myapp+0x131c>
+<myapp+0xbd1>
+

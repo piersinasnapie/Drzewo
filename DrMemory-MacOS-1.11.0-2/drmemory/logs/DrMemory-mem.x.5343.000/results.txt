@@ -1,0 +1,244 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 5343: "mem.x"
+Recorded 3 suppression(s) from default /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c480-0x0043c484 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_node
+# 5 Drzewo<>::delete_tree
+# 6 Drzewo<>::~Drzewo
+# 7 Drzewo<>::~Drzewo
+# 8 main 
+Note: •0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c4d8-0x0043c4f0
+Note: prev lower malloc:  0x0043c418-0x0043c430
+Note: 0x0043c480-0x0043c484 overlaps memory 0x0043c478-0x0043c490 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_node
+Note: instruction: mov    0x08(%eax) -> %eax
+
+Error #2: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c480-0x0043c484 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_node
+# 5 Drzewo<>::delete_tree
+# 6 Drzewo<>::~Drzewo
+# 7 Drzewo<>::~Drzewo
+# 8 main 
+Note: Æ0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c4d8-0x0043c4f0
+Note: prev lower malloc:  0x0043c418-0x0043c430
+Note: 0x0043c480-0x0043c484 overlaps memory 0x0043c478-0x0043c490 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_node
+Note: instruction: mov    %eax -> 0x08(%ecx)
+
+Error #3: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c420-0x0043c424 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_tree
+# 5 Drzewo<>::~Drzewo
+# 6 Drzewo<>::~Drzewo
+# 7 main 
+Note: L0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c600-0x0043c618
+Note: prev lower malloc:  0x0043c3e8-0x0043c3f8
+Note: 0x0043c420-0x0043c424 overlaps memory 0x0043c418-0x0043c430 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_tree
+Note: instruction: mov    0x08(%eax) -> %eax
+
+Error #4: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c420-0x0043c424 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_tree
+# 5 Drzewo<>::~Drzewo
+# 6 Drzewo<>::~Drzewo
+# 7 main 
+Note: |0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c600-0x0043c618
+Note: prev lower malloc:  0x0043c3e8-0x0043c3f8
+Note: 0x0043c420-0x0043c424 overlaps memory 0x0043c418-0x0043c430 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_tree
+Note: instruction: mov    %eax -> 0x08(%ecx)
+
+Error #5: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c2f8-0x0043c2fc 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_tree
+# 4 Drzewo<>::~Drzewo
+# 5 Drzewo<>::~Drzewo
+# 6 main 
+Note: e0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c350-0x0043c368
+Note: prev lower malloc:  0x0043c2c0-0x0043c2d0
+Note: 0x0043c2f8-0x0043c2fc overlaps memory 0x0043c2f0-0x0043c308 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_tree
+Note: # 5 Drzewo<>::~Drzewo
+Note: instruction: mov    0x08(%eax) -> %eax
+
+Error #6: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c2f8-0x0043c2fc 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_tree
+# 4 Drzewo<>::~Drzewo
+# 5 Drzewo<>::~Drzewo
+# 6 main 
+Note: `0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c350-0x0043c368
+Note: prev lower malloc:  0x0043c2c0-0x0043c2d0
+Note: 0x0043c2f8-0x0043c2fc overlaps memory 0x0043c2f0-0x0043c308 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_tree
+Note: # 5 Drzewo<>::~Drzewo
+Note: instruction: mov    %eax -> 0x08(%ecx)
+
+Error #7: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c910-0x0043c914 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_node
+# 5 Drzewo<>::delete_node
+# 6 Drzewo<>::delete_tree
+# 7 Drzewo<>::~Drzewo
+# 8 Drzewo<>::~Drzewo
+# 9 main 
+Note: –0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c968-0x0043c980
+Note: prev lower malloc:  0x0043c8e0-0x0043c8e4
+Note: 0x0043c910-0x0043c914 overlaps memory 0x0043c908-0x0043c920 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_node
+Note: instruction: mov    0x08(%eax) -> %eax
+
+Error #8: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c910-0x0043c914 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_node
+# 3 Drzewo<>::delete_node
+# 4 Drzewo<>::delete_node
+# 5 Drzewo<>::delete_node
+# 6 Drzewo<>::delete_tree
+# 7 Drzewo<>::~Drzewo
+# 8 Drzewo<>::~Drzewo
+# 9 main 
+Note: i0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c968-0x0043c980
+Note: prev lower malloc:  0x0043c8e0-0x0043c8e4
+Note: 0x0043c910-0x0043c914 overlaps memory 0x0043c908-0x0043c920 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_node
+Note: # 4 Drzewo<>::delete_node
+Note: # 5 Drzewo<>::delete_node
+Note: instruction: mov    %eax -> 0x08(%ecx)
+
+Error #9: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c290-0x0043c294 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_tree
+# 3 Drzewo<>::~Drzewo
+# 4 Drzewo<>::~Drzewo
+# 5 main 
+Note: Þ0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c2c0-0x0043c2d0
+Note: prev lower malloc:  0x0043c228-0x0043c240
+Note: 0x0043c290-0x0043c294 overlaps memory 0x0043c288-0x0043c2a0 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_tree
+Note: # 4 Drzewo<>::~Drzewo
+Note: # 5 Drzewo<>::~Drzewo
+Note: instruction: mov    0x08(%eax) -> %eax
+
+Error #10: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c290-0x0043c294 4 byte(s)
+# 0 Drzewo<>::delete_node
+# 1 Drzewo<>::delete_node
+# 2 Drzewo<>::delete_tree
+# 3 Drzewo<>::~Drzewo
+# 4 Drzewo<>::~Drzewo
+# 5 main 
+Note: ¥0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c2c0-0x0043c2d0
+Note: prev lower malloc:  0x0043c228-0x0043c240
+Note: 0x0043c290-0x0043c294 overlaps memory 0x0043c288-0x0043c2a0 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Drzewo<>::delete_node
+Note: # 2 Drzewo<>::delete_node
+Note: # 3 Drzewo<>::delete_tree
+Note: # 4 Drzewo<>::~Drzewo
+Note: # 5 Drzewo<>::~Drzewo
+Note: instruction: mov    %eax -> 0x08(%ecx)
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      4
+	Error #   2:      4
+	Error #   3:      9
+	Error #   4:      9
+	Error #   5:      2
+	Error #   6:      2
+	Error #   7:      7
+	Error #   8:      7
+	Error #   9:      2
+	Error #  10:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+     10 unique,    48 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-mem.x.5343.000/results.txt

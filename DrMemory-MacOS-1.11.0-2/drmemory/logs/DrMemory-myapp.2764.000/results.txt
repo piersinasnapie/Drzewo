@@ -1,0 +1,29 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 2764: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x004ec194-0x004ec195 1 byte(s)
+# 0 main               [/Users/mateusz/Desktop/ptr_test.cpp:9]
+Note: ê0:00:00.000 in thread 89210
+Note: refers to 3 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004ec190-0x004ec191
+Note: instruction: mov    $0x64 -> 0x04(%eax)
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      1 unique,     1 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.2764.000/results.txt

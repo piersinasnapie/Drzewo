@@ -1,0 +1,22 @@
+# File for suppressing errors found in pid 596: "myapp"
+
+# Suppression for Error #1
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!WezelSznura::~WezelSznura
+myapp!WezelSznura::~WezelSznura
+myapp!Sznur::~Sznur
+myapp!Sznur::~Sznur
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x1bf0>
+<myapp+0x1b97>
+<myapp+0x1b36>
+<myapp+0x1517>
+<myapp+0x1172>
+

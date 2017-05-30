@@ -1,0 +1,36 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 1960: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register edi
+# 0 libc++.1.dylib!std::__1::basic_istream<>::get
+# 1 przetworzStrumien                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream:1013]
+# 2 main                                         [/Users/mateusz/Desktop/source.cpp:462]
+Note: $0:00:00.000 in thread 59033
+Note: instruction: mov    %al -> (%edi)
+
+Error #2: UNADDRESSABLE ACCESS: writing 0x00000000-0x00000001 1 byte(s)
+# 0 libc++.1.dylib!std::__1::basic_istream<>::get
+# 1 przetworzStrumien                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream:1013]
+# 2 main                                         [/Users/mateusz/Desktop/source.cpp:462]
+Note: 	0:00:00.000 in thread 59033
+Note: instruction: mov    %al -> (%edi)
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      1 unique,     1 total unaddressable access(es)
+      1 unique,     1 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      2 unique,     2 total,   8192 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.1960.000/results.txt

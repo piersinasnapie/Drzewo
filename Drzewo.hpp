@@ -71,7 +71,6 @@ private:
         } 
 
         delete node;
-        node->children.clear();
         number_of_nodes--;
     }
 
@@ -120,6 +119,11 @@ private:
                 }
                 else
                 {
+                    while(other_current->parent->brother == nullptr)
+                    {
+                        other_current = other_current->parent;
+                        current = current->parent;
+                    }
                     other_current = other_current->parent->brother;
                     current = current->parent->brother;
                 }
@@ -190,6 +194,15 @@ public:
          * @return  Wskaźnik do samego siebie.
          */
         iterator& operator++();
+
+        /**
+         * Operator post-inkrementacji dla klasy iterator.
+         * Przechodzenie po drzewie następuje w porządku:
+         * PRE-ORDER. Zwraca referencję do samego siebie (obiektu klasy iterator).
+         * 
+         * @return  Wskaźnik do samego siebie.
+         */
+        iterator& operator++(int);
 
         /**
          * Zwraca adres do obiektu typu T przechowywanego we wskaźniku.
@@ -407,7 +420,7 @@ Drzewo<T>::Drzewo(const Drzewo& other_tree)
 template<typename T>
 Drzewo<T>& Drzewo<T>::operator=(const Drzewo& other_tree)
 {
-    if(root_node != nullptr && other_tree.root().ptr != nullptr)
+    if(other_tree.root().ptr != nullptr)
     {
         if(number_of_nodes)
         {
@@ -601,5 +614,12 @@ typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
     }
     return *this;
 }
+
+template<typename T>
+typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++(int)
+{
+    return operator++();
+}
+
 
 #endif

@@ -1,0 +1,65 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 2102: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x004871b1-0x004871b2 1 byte(s)
+# 0 libc++.1.dylib!std::__1::basic_istream<>::get
+# 1 przetworzStrumien                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream:1013]
+# 2 main                                         [/Users/mateusz/Desktop/source.cpp:465]
+Note: +0:00:00.000 in thread 62696
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004871b0-0x004871b1
+Note: instruction: mov    %al -> (%edi)
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x004871b2-0x004871b3 1 byte(s)
+# 0 libc++.1.dylib!std::__1::basic_istream<>::get
+# 1 przetworzStrumien                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/istream:1013]
+# 2 main                                         [/Users/mateusz/Desktop/source.cpp:465]
+Note: #0:00:00.000 in thread 62696
+Note: refers to 1 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004871b0-0x004871b1
+Note: instruction: mov    $0x00 -> (%edi)
+
+Error #3: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x004871b1-0x004871b2 1 byte(s)
+# 0 replace_strlen             
+# 1 std::__1::char_traits<>::length               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:644]
+# 2 std::__1::operator<< <>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 3 przetworzStrumien                             [/Users/mateusz/Desktop/source.cpp:390]
+# 4 main                                          [/Users/mateusz/Desktop/source.cpp:465]
+Note: Â0:00:00.000 in thread 62696
+Note: next higher malloc: 0x004871d8-0x004881d8
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004871b0-0x004871b1
+Note: instruction: movsx  (%eax) -> %eax
+
+Error #4: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x004871b1-0x004871b2 1 byte(s)
+# 0 replace_memchr             
+# 1 libsystem_c.dylib!__sfvwrite       
+# 2 libsystem_c.dylib!fwrite$UNIX2003  
+# 3 libc++.1.dylib!std::__1::__stdoutbuf<>::xsputn
+# 4 std::__1::__pad_and_output<>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf:360]
+# 5 std::__1::__put_character_sequence<>               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:755]
+# 6 std::__1::operator<< <>                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 7 przetworzStrumien                                  [/Users/mateusz/Desktop/source.cpp:390]
+# 8 main                                               [/Users/mateusz/Desktop/source.cpp:465]
+Note: ÿ0:00:00.000 in thread 62696
+Note: next higher malloc: 0x004871d8-0x004881d8
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004871b0-0x004871b1
+Note: instruction: movzx  (%eax) -> %eax
+
+Error #5: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x004871b1-0x004871b2 1 byte(s)
+# 0 replace_memmove            
+# 1 libsystem_c.dylib!__sfvwrite       
+# 2 libsystem_c.dylib!fwrite$UNIX2003  
+# 3 libc++.1.dylib!std::__1::__stdoutbuf<>::xsputn
+# 4 std::__1::__pad_and_output<>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf:360]
+# 5 std::__1::__put_character_sequence<>               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:755]
+# 6 std::__1::operator<< <>                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 7 przetworzStrumien                                  [/Users/mateusz/Desktop/source.cpp:390]
+# 8 main                                               [/Users/mateusz/Desktop/source.cpp:465]
+Note: ê0:00:00.000 in thread 62696
+Note: next higher malloc: 0x004871d8-0x004881d8
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x004871b0-0x004871b1
+Note: instruction: mov    (%eax) -> %dl

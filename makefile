@@ -7,6 +7,15 @@ TEST_FLAGS = -lcppunit
 test: test.cpp
 	$(FLAGS) $^ -o $@.x $(TEST_FLAGS)
 
+mem: mem.cpp
+	$(FLAGS) $^ -o $mem.x
+
+# sprawdzenie wycieków pamięci
+mem_test:
+	c++ -m32 -g -fno-inline -fno-omit-frame-pointer mem.cpp -c -std=c++14
+	c++ -m32 -g -fno-inline -fno-omit-frame-pointer mem.o -o mem.x -std=c++14
+	DrMemory-MacOS-1.11.0-2/bin/drmemory  -- ./mem.x
+
 # uruchomienie oraz kompilacja zestawu testów dla podstawowych funkcji klasy Drzewo
 run_test: test
 	./test.x

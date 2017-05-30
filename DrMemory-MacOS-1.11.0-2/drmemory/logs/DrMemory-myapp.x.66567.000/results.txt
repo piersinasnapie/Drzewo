@@ -1,0 +1,38 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 66567: "myapp.x"
+Recorded 3 suppression(s) from default /Users/mateusz/Library/Mobile Documents/com~apple~CloudDocs/Developer/utilities/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+WARNING: application is missing line number information.
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x0040b234-0x0040b238 4 byte(s)
+# 0 main   
+Note: x0:00:00.000 in thread 1252651
+Note: refers to 4 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0040b210-0x0040b230
+Note: instruction: mov    $0x40026666 -> 0x04(%eax)
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x0040b230-0x0040b234 4 byte(s)
+# 0 main   
+Note: Õ0:00:00.000 in thread 1252651
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0040b210-0x0040b230
+Note: instruction: mov    $0x66666666 -> (%eax)
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      2 unique,     2 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Library/Mobile Documents/com~apple~CloudDocs/Developer/utilities/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.x.66567.000/results.txt

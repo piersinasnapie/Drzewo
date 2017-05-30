@@ -1,0 +1,29 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 1746: "myapp.x"
+Recorded 3 suppression(s) from default /Users/mateusz/Library/Mobile Documents/com~apple~CloudDocs/Developer/Utilities/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: LEAK 32 direct bytes 0x004232b0-0x004232d0 + 0 indirect bytes
+# 0 replace_operator_new_array 
+# 1 ms::Vector::Vector
+# 2 ms::Vector::Vector
+# 3 ms::operator+
+# 4 main   
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      1 unique,     1 total,     32 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      4 unique,     4 total,   4188 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Library/Mobile Documents/com~apple~CloudDocs/Developer/Utilities/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.x.1746.000/results.txt

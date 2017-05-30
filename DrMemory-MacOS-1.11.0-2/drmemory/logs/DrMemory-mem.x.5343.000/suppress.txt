@@ -1,0 +1,242 @@
+# File for suppressing errors found in pid 5343: "mem.x"
+
+# Suppression for Error #1
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #1:
+UNADDRESSABLE ACCESS
+name=Error #1 (update to meaningful name)
+<mem.x+0x1d61>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<mem.x+0x1d7f>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #3
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #3:
+UNADDRESSABLE ACCESS
+name=Error #3 (update to meaningful name)
+<mem.x+0x1d61>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #4
+UNADDRESSABLE ACCESS
+name=Error #4 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #4:
+UNADDRESSABLE ACCESS
+name=Error #4 (update to meaningful name)
+<mem.x+0x1d7f>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #5
+UNADDRESSABLE ACCESS
+name=Error #5 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #5:
+UNADDRESSABLE ACCESS
+name=Error #5 (update to meaningful name)
+<mem.x+0x1d61>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #6
+UNADDRESSABLE ACCESS
+name=Error #6 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #6:
+UNADDRESSABLE ACCESS
+name=Error #6 (update to meaningful name)
+<mem.x+0x1d7f>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #7
+UNADDRESSABLE ACCESS
+name=Error #7 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #7:
+UNADDRESSABLE ACCESS
+name=Error #7 (update to meaningful name)
+<mem.x+0x1d61>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #8
+UNADDRESSABLE ACCESS
+name=Error #8 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #8:
+UNADDRESSABLE ACCESS
+name=Error #8 (update to meaningful name)
+<mem.x+0x1d7f>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #9
+UNADDRESSABLE ACCESS
+name=Error #9 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #9:
+UNADDRESSABLE ACCESS
+name=Error #9 (update to meaningful name)
+<mem.x+0x1d61>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+
+# Suppression for Error #10
+UNADDRESSABLE ACCESS
+name=Error #10 (update to meaningful name)
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_node
+mem.x!Drzewo<>::delete_tree
+mem.x!Drzewo<>::~Drzewo
+mem.x!Drzewo<>::~Drzewo
+mem.x!main
+
+## Mod+offs-style suppression for Error #10:
+UNADDRESSABLE ACCESS
+name=Error #10 (update to meaningful name)
+<mem.x+0x1d7f>
+<mem.x+0x1bdb>
+<mem.x+0x1a2c>
+<mem.x+0x19e5>
+<mem.x+0x1817>
+<mem.x+0x11fb>
+

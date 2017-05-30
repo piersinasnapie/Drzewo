@@ -1,0 +1,14 @@
+# File for suppressing errors found in pid 2629: "myapp"
+
+# Suppression for Error #1
+LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31800>
+<myapp+0x1064>
+

@@ -1,0 +1,479 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 1788: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: POSSIBLE LEAK 40 direct bytes 0x0053c140-0x0053c168 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 stworzWektor                                     [//Users/mateusz/Downloads/file.cpp:301]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:389]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #2: LEAK 24 direct bytes 0x0053c190-0x0053c1a8 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 main                         [//Users/mateusz/Downloads/file.cpp:52]
+
+Error #3: POSSIBLE LEAK 40 direct bytes 0x0053d1e8-0x0053d210 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 stworzWektor                             [//Users/mateusz/Downloads/file.cpp:301]
+# 2 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:351]
+# 3 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #4: POSSIBLE LEAK 40 direct bytes 0x0053d278-0x0053d2a0 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                         [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                            [//Users/mateusz/Downloads/file.cpp:190]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:352]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #5: POSSIBLE LEAK 40 direct bytes 0x0053d308-0x0053d330 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                         [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                            [//Users/mateusz/Downloads/file.cpp:193]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:352]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #6: POSSIBLE LEAK 40 direct bytes 0x0053d350-0x0053d378 + 200 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                [//Users/mateusz/Downloads/file.cpp:234]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #7: LEAK 40 direct bytes 0x0053d500-0x0053d528 + 200 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazyWektorTransponowany               [//Users/mateusz/Downloads/file.cpp:198]
+# 2 obliczMacierzHouseholdera                   [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci                  [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                        [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #8: POSSIBLE LEAK 40 direct bytes 0x0053d6b0-0x0053d6d8 + 200 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazySkalar                        [//Users/mateusz/Downloads/file.cpp:277]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #9: LEAK 40 direct bytes 0x0053d860-0x0053d888 + 200 indirect bytes
+# 0 replace_malloc             
+# 1 macierzMinusMacierz                      [//Users/mateusz/Downloads/file.cpp:216]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #10: POSSIBLE LEAK 48 direct bytes 0x0053da10-0x0053da40 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzKwadratowaOWiekszymWymiarzeZMacierzKwadratwej               [//Users/mateusz/Downloads/file.cpp:314]
+# 2 sprowadzDoProstszejPostaci                                         [//Users/mateusz/Downloads/file.cpp:354]
+# 3 main                                                               [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #11: LEAK 48 direct bytes 0x0053dc40-0x0053dc70 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                       [//Users/mateusz/Downloads/file.cpp:253]
+# 2 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:355]
+# 3 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #12: POSSIBLE LEAK 48 direct bytes 0x0053de70-0x0053dea0 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                       [//Users/mateusz/Downloads/file.cpp:253]
+# 2 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:356]
+# 3 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #13: LEAK 32 direct bytes 0x0053e120-0x0053e140 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                         [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                            [//Users/mateusz/Downloads/file.cpp:190]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:352]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #14: POSSIBLE LEAK 32 direct bytes 0x0053e320-0x0053e340 + 96 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazyWektorTransponowany               [//Users/mateusz/Downloads/file.cpp:198]
+# 2 obliczMacierzHouseholdera                   [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci                  [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                        [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #15: LEAK 32 direct bytes 0x0053e460-0x0053e480 + 128 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazySkalar                        [//Users/mateusz/Downloads/file.cpp:277]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #16: POSSIBLE LEAK 32 direct bytes 0x0053e5a0-0x0053e5c0 + 128 indirect bytes
+# 0 replace_malloc             
+# 1 macierzMinusMacierz                      [//Users/mateusz/Downloads/file.cpp:216]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #17: POSSIBLE LEAK 48 direct bytes 0x0053e910-0x0053e940 + 240 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                       [//Users/mateusz/Downloads/file.cpp:253]
+# 2 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:355]
+# 3 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #18: LEAK 24 direct bytes 0x0053ee50-0x0053ee68 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                         [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                            [//Users/mateusz/Downloads/file.cpp:193]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:352]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #19: LEAK 24 direct bytes 0x0053ee88-0x0053eea0 + 72 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                [//Users/mateusz/Downloads/file.cpp:234]
+# 2 obliczMacierzHouseholdera                [//Users/mateusz/Downloads/file.cpp:296]
+# 3 sprowadzDoProstszejPostaci               [//Users/mateusz/Downloads/file.cpp:353]
+# 4 main                                     [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #20: LEAK 48 direct bytes 0x0053f208-0x0053f238 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzKwadratowaOWiekszymWymiarzeZMacierzKwadratwej               [//Users/mateusz/Downloads/file.cpp:314]
+# 2 sprowadzDoProstszejPostaci                                         [//Users/mateusz/Downloads/file.cpp:354]
+# 3 main                                                               [//Users/mateusz/Downloads/file.cpp:60]
+
+Error #21: LEAK 16 direct bytes 0x0053f8c8-0x0053f8d8 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 stworzWektor                                     [//Users/mateusz/Downloads/file.cpp:301]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:389]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #22: POSSIBLE LEAK 24 direct bytes 0x005404b0-0x005404c8 + 72 indirect bytes
+# 0 replace_malloc             
+# 1 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:416]
+# 2 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #23: POSSIBLE LEAK 48 direct bytes 0x00540518-0x00540548 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:420]
+# 2 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #24: POSSIBLE LEAK 8 direct bytes 0x005407e8-0x005407f0 + 96 indirect bytes
+# 0 replace_malloc             
+# 1 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:402]
+# 2 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 3 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #25: POSSIBLE LEAK 48 direct bytes 0x00540810-0x00540840 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                        [//Users/mateusz/Downloads/file.cpp:234]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:404]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #26: POSSIBLE LEAK 8 direct bytes 0x00540a40-0x00540a48 + 672 indirect bytes
+# 0 replace_malloc             
+# 1 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:384]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #27: POSSIBLE LEAK 48 direct bytes 0x00540a68-0x00540a98 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                        [//Users/mateusz/Downloads/file.cpp:234]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:386]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #28: LEAK 16 direct bytes 0x00540ce8-0x00540cf8 + 32 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                        [//Users/mateusz/Downloads/file.cpp:234]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #29: POSSIBLE LEAK 48 direct bytes 0x00540d38-0x00540d68 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                                 [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                                    [//Users/mateusz/Downloads/file.cpp:190]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:390]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #30: LEAK 48 direct bytes 0x00540dd8-0x00540e08 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                                 [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                                    [//Users/mateusz/Downloads/file.cpp:193]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:390]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #31: POSSIBLE LEAK 48 direct bytes 0x00541058-0x00541088 + 240 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazyWektorTransponowany                    [//Users/mateusz/Downloads/file.cpp:198]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #32: LEAK 48 direct bytes 0x00541288-0x005412b8 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazySkalar                                [//Users/mateusz/Downloads/file.cpp:277]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #33: POSSIBLE LEAK 48 direct bytes 0x005414b8-0x005414e8 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzMinusMacierz                              [//Users/mateusz/Downloads/file.cpp:216]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #34: LEAK 48 direct bytes 0x005416e8-0x00541718 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:393]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #35: POSSIBLE LEAK 48 direct bytes 0x00541918-0x00541948 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:394]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #36: LEAK 40 direct bytes 0x00541bd8-0x00541c00 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                                 [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                                    [//Users/mateusz/Downloads/file.cpp:190]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:390]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #37: POSSIBLE LEAK 48 direct bytes 0x00542370-0x005423a0 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzKwadratowaOWiekszymWymiarzeZMacierzKwadratwej               [//Users/mateusz/Downloads/file.cpp:314]
+# 2 znajdzRozkladQR                                                    [//Users/mateusz/Downloads/file.cpp:392]
+# 3 znajdzWektoryIWartosciWlasne                                       [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci                                 [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                                               [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #38: POSSIBLE LEAK 48 direct bytes 0x005425a0-0x005425d0 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:393]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #39: POSSIBLE LEAK 32 direct bytes 0x00542b00-0x00542b20 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazySkalar                                 [//Users/mateusz/Downloads/file.cpp:121]
+# 2 obliczWektorU                                    [//Users/mateusz/Downloads/file.cpp:193]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:390]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #40: POSSIBLE LEAK 32 direct bytes 0x00542b40-0x00542b60 + 128 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                        [//Users/mateusz/Downloads/file.cpp:234]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #41: LEAK 32 direct bytes 0x00542c80-0x00542ca0 + 128 indirect bytes
+# 0 replace_malloc             
+# 1 wektorRazyWektorTransponowany                    [//Users/mateusz/Downloads/file.cpp:198]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #42: POSSIBLE LEAK 32 direct bytes 0x00542dc0-0x00542de0 + 128 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazySkalar                                [//Users/mateusz/Downloads/file.cpp:277]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #43: LEAK 24 direct bytes 0x00543a88-0x00543aa0 + 72 indirect bytes
+# 0 replace_malloc             
+# 1 macierzMinusMacierz                              [//Users/mateusz/Downloads/file.cpp:216]
+# 2 obliczMacierzHouseholdera                        [//Users/mateusz/Downloads/file.cpp:296]
+# 3 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:391]
+# 4 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 5 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 6 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #44: POSSIBLE LEAK 48 direct bytes 0x00544de8-0x00544e18 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:409]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #45: LEAK 48 direct bytes 0x00545018-0x00545048 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:410]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #46: POSSIBLE LEAK 48 direct bytes 0x00548fb0-0x00548fe0 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:256]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:393]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #47: LEAK 48 direct bytes 0x005490a0-0x005490d0 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:256]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:393]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #48: LEAK 48 direct bytes 0x00549410-0x00549440 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 transponujMacierz                                [//Users/mateusz/Downloads/file.cpp:365]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:397]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #49: POSSIBLE LEAK 48 direct bytes 0x005494b0-0x005494e0 + 0 indirect bytes
+# 0 replace_malloc             
+# 1 transponujMacierz                                [//Users/mateusz/Downloads/file.cpp:365]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:397]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #50: LEAK 48 direct bytes 0x005495f0-0x00549620 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:409]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #51: LEAK 8 direct bytes 0x00549a50-0x00549a58 + 48 indirect bytes
+# 0 replace_malloc             
+# 1 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:384]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #52: LEAK 48 direct bytes 0x00549a78-0x00549aa8 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 wygenerujMacierzJedynkowa                        [//Users/mateusz/Downloads/file.cpp:234]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:386]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #53: LEAK 48 direct bytes 0x0054a928-0x0054a958 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzRozkladQR                                  [//Users/mateusz/Downloads/file.cpp:394]
+# 3 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #54: LEAK 48 direct bytes 0x0054b380-0x0054b3b0 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzKwadratowaOWiekszymWymiarzeZMacierzKwadratwej               [//Users/mateusz/Downloads/file.cpp:314]
+# 2 znajdzRozkladQR                                                    [//Users/mateusz/Downloads/file.cpp:392]
+# 3 znajdzWektoryIWartosciWlasne                                       [//Users/mateusz/Downloads/file.cpp:408]
+# 4 zapiszDoTablicyWektoryOrazWartosci                                 [//Users/mateusz/Downloads/file.cpp:423]
+# 5 main                                                               [//Users/mateusz/Downloads/file.cpp:64]
+
+Error #55: POSSIBLE LEAK 48 direct bytes 0x00557038-0x00557068 + 288 indirect bytes
+# 0 replace_malloc             
+# 1 macierzRazymacierz                               [//Users/mateusz/Downloads/file.cpp:253]
+# 2 znajdzWektoryIWartosciWlasne                     [//Users/mateusz/Downloads/file.cpp:410]
+# 3 zapiszDoTablicyWektoryOrazWartosci               [//Users/mateusz/Downloads/file.cpp:423]
+# 4 main                                             [//Users/mateusz/Downloads/file.cpp:64]
+
+Reached maximum leak report limit (-report_leak_max). No further leaks will be reported.
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:    445
+	Error #   3:      4
+	Error #   4:      2
+	Error #   5:      3
+	Error #   6:      3
+	Error #   7:      3
+	Error #   9:      2
+	Error #  10:      2
+	Error #  12:      4
+	Error #  13:      2
+	Error #  15:      3
+	Error #  16:      2
+	Error #  17:      3
+	Error #  21:    218
+	Error #  23:      5
+	Error #  26:     19
+	Error #  27:    115
+	Error #  28:    232
+	Error #  29:    447
+	Error #  30:    224
+	Error #  31:    445
+	Error #  32:    238
+	Error #  33:    424
+	Error #  34:     75
+	Error #  35:    608
+	Error #  36:    215
+	Error #  37:    460
+	Error #  38:    463
+	Error #  39:    445
+	Error #  40:    436
+	Error #  41:    225
+	Error #  42:    431
+	Error #  43:    239
+	Error #  44:    118
+	Error #  45:     14
+	Error #  46:    560
+	Error #  47:     61
+	Error #  48:     67
+	Error #  49:    554
+	Error #  50:     17
+	Error #  51:    109
+	Error #  52:     17
+	Error #  53:     61
+	Error #  54:     64
+	Error #  55:    116
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+     25 unique,  2091 total, 230880 byte(s) of leak(s)
+     30 unique,  6119 total, 1077952 byte(s) of possible leak(s)
+ERRORS IGNORED:
+     39 unique,  1790 total,  79188 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+   4854 leak(s) beyond -report_leak_max
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.1788.000/results.txt

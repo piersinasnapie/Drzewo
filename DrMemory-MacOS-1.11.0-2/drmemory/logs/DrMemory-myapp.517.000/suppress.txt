@@ -1,0 +1,54 @@
+# File for suppressing errors found in pid 517: "myapp"
+
+# Suppression for Error #1
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!WezelSznura::~WezelSznura
+myapp!WezelSznura::~WezelSznura
+myapp!Sznur::~Sznur
+myapp!Sznur::~Sznur
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x1bda>
+<myapp+0x1b87>
+<myapp+0x1b16>
+<myapp+0x14f7>
+<myapp+0x1152>
+
+# Suppression for Error #2
+INVALID HEAP ARGUMENT
+name=Error #2 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!Sznur::~Sznur
+myapp!Sznur::~Sznur
+myapp!main
+
+## Mod+offs-style suppression for Error #2:
+INVALID HEAP ARGUMENT
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x1b5d>
+<myapp+0x14f7>
+<myapp+0x1152>
+
+# Suppression for Error #3
+POSSIBLE LEAK
+name=Error #3 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new
+myapp!ListaPowiazan::dodajPowiazanie
+myapp!Koralik::dodajPowiazanie
+myapp!main
+
+## Mod+offs-style suppression for Error #3:
+POSSIBLE LEAK
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31800>
+<myapp+0x16e7>
+<myapp+0x1224>
+<myapp+0x1113>
+

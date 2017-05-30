@@ -1,0 +1,31 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 596: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: INVALID HEAP ARGUMENT to free 0xbff529a0
+# 0 replace_operator_delete    
+# 1 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:165]
+# 2 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:162]
+# 3 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:261]
+# 4 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:253]
+# 5 main                                    [/Users/mateusz/Desktop/source.cpp:347]
+Note: 0:00:00.000 in thread 10140
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      1 unique,     1 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.596.000/results.txt

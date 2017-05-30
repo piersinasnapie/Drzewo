@@ -1,0 +1,36 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 497: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: INVALID HEAP ARGUMENT to free 0x000bcf74
+# 0 replace_operator_delete    
+# 1 cos::~cos                             [/Users/mateusz/Desktop/test.cpp:13]
+# 2 cos::~cos                             [/Users/mateusz/Desktop/test.cpp:12]
+# 3 main                                  [/Users/mateusz/Desktop/test.cpp:19]
+Note: õ0:00:00.000 in thread 6548
+
+Error #2: INVALID HEAP ARGUMENT to free 0x000bcf74
+# 0 replace_operator_delete    
+# 1 cos::~cos                             [/Users/mateusz/Desktop/test.cpp:13]
+# 2 cos::~cos                             [/Users/mateusz/Desktop/test.cpp:12]
+# 3 main                                  [/Users/mateusz/Desktop/test.cpp:21]
+Note: ˜0:00:00.000 in thread 6548
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      2 unique,     2 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.497.000/results.txt

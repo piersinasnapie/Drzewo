@@ -1,0 +1,86 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 2692: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x0045d191-0x0045d192 1 byte(s)
+# 0 main               [/Users/mateusz/Desktop/ptr_test.cpp:9]
+Note: 0:00:00.000 in thread 87162
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: mov    $0x42 -> 0x01(%eax)
+
+Error #2: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x0045d192-0x0045d193 1 byte(s)
+# 0 main               [/Users/mateusz/Desktop/ptr_test.cpp:10]
+Note: ¤0:00:00.000 in thread 87162
+Note: refers to 1 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: mov    $0x63 -> 0x02(%eax)
+
+Error #3: UNADDRESSABLE ACCESS beyond heap bounds: writing 0x0045d193-0x0045d194 1 byte(s)
+# 0 main               [/Users/mateusz/Desktop/ptr_test.cpp:11]
+Note: ]0:00:00.000 in thread 87162
+Note: refers to 2 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: mov    $0x00 -> 0x03(%eax)
+
+Error #4: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x0045d191-0x0045d192 1 byte(s)
+# 0 replace_strlen             
+# 1 std::__1::char_traits<>::length               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/string:644]
+# 2 std::__1::operator<< <>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 3 main                                          [/Users/mateusz/Desktop/ptr_test.cpp:12]
+Note: g0:00:00.000 in thread 87162
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: movsx  (%eax) -> %eax
+
+Error #5: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x0045d191-0x0045d192 1 byte(s)
+# 0 replace_memchr             
+# 1 libsystem_c.dylib!__sfvwrite       
+# 2 libsystem_c.dylib!fwrite$UNIX2003  
+# 3 libc++.1.dylib!std::__1::__stdoutbuf<>::xsputn
+# 4 std::__1::__pad_and_output<>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf:360]
+# 5 std::__1::__put_character_sequence<>               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:755]
+# 6 std::__1::operator<< <>                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 7 main                                               [/Users/mateusz/Desktop/ptr_test.cpp:12]
+Note: è0:00:00.000 in thread 87162
+Note: next higher malloc: 0x0045d1b8-0x0045e1b8
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: movzx  (%eax) -> %eax
+
+Error #6: UNADDRESSABLE ACCESS beyond heap bounds: reading 0x0045d191-0x0045d192 1 byte(s)
+# 0 replace_memmove            
+# 1 libsystem_c.dylib!__sfvwrite       
+# 2 libsystem_c.dylib!fwrite$UNIX2003  
+# 3 libc++.1.dylib!std::__1::__stdoutbuf<>::xsputn
+# 4 std::__1::__pad_and_output<>                       [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/streambuf:360]
+# 5 std::__1::__put_character_sequence<>               [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:755]
+# 6 std::__1::operator<< <>                            [/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:894]
+# 7 main                                               [/Users/mateusz/Desktop/ptr_test.cpp:12]
+Note: 0:00:00.000 in thread 87162
+Note: next higher malloc: 0x0045d1b8-0x0045e1b8
+Note: refers to 0 byte(s) beyond last valid byte in prior malloc
+Note: prev lower malloc:  0x0045d190-0x0045d191
+Note: instruction: mov    (%eax) -> %dl
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   4:      3
+	Error #   5:      2
+	Error #   6:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      6 unique,    10 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.2692.000/results.txt

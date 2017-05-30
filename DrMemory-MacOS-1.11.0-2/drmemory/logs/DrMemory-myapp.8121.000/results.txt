@@ -1,0 +1,211 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 8121: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: INVALID HEAP ARGUMENT to free 0xbff679a0
+# 0 replace_operator_delete    
+# 1 WezelSznura::~WezelSznura                       [/Users/mateusz/Desktop/source.cpp:162]
+# 2 WezelSznura::~WezelSznura                       [/Users/mateusz/Desktop/source.cpp:160]
+# 3 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:258]
+# 4 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+# 5 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+# 6 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+# 7 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+# 8 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:314]
+# 9 main                                            [/Users/mateusz/Desktop/source.cpp:349]
+Note: v0:00:00.000 in thread 273626
+
+Error #2: INVALID HEAP ARGUMENT to free 0x0009bed0
+# 0 replace_operator_delete    
+# 1 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:260]
+# 2 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+# 3 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+# 4 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+# 5 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+# 6 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:314]
+# 7 main                                            [/Users/mateusz/Desktop/source.cpp:349]
+Note: ‘0:00:00.000 in thread 273626
+
+Error #3: INVALID HEAP ARGUMENT to free 0xbff67988
+# 0 replace_operator_delete    
+# 1 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+# 2 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+# 3 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+# 4 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:314]
+# 5 main                                            [/Users/mateusz/Desktop/source.cpp:349]
+Note: _0:00:00.000 in thread 273626
+
+Error #4: UNADDRESSABLE ACCESS of freed memory: reading 0x004ed1f0-0x004ed1f4 4 byte(s)
+# 0 Sznur::~Sznur               [/Users/mateusz/Desktop/source.cpp:253]
+# 1 Sznur::~Sznur               [/Users/mateusz/Desktop/source.cpp:250]
+# 2 main                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: ð0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: 0x004ed1f0-0x004ed1f4 overlaps memory 0x004ed1f0-0x004ed1f8 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:258]
+Note: # 2 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+Note: # 3 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+Note: # 4 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+Note: # 5 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+Note: instruction: cmp    (%eax) $0x00000000
+
+Error #5: UNADDRESSABLE ACCESS of freed memory: reading 0x004ed1f4-0x004ed1f8 4 byte(s)
+# 0 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:161]
+# 1 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:160]
+# 2 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:258]
+# 3 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:250]
+# 4 main                                    [/Users/mateusz/Desktop/source.cpp:349]
+Note: â0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: 0x004ed1f4-0x004ed1f8 overlaps memory 0x004ed1f0-0x004ed1f8 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:258]
+Note: # 2 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+Note: # 3 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+Note: # 4 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+Note: # 5 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+Note: instruction: cmp    0x04(%eax) $0x00000000
+
+Error #6: UNADDRESSABLE ACCESS of freed memory: reading 0x004ed1f4-0x004ed1f8 4 byte(s)
+# 0 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:162]
+# 1 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:160]
+# 2 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:258]
+# 3 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:250]
+# 4 main                                    [/Users/mateusz/Desktop/source.cpp:349]
+Note: Z0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: 0x004ed1f4-0x004ed1f8 overlaps memory 0x004ed1f0-0x004ed1f8 that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:258]
+Note: # 2 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+Note: # 3 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+Note: # 4 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+Note: # 5 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+Note: instruction: mov    0x04(%eax) -> %ecx
+
+Error #7: UNADDRESSABLE ACCESS of freed memory: reading 0x004ed1c8-0x004ed1cc 4 byte(s)
+# 0 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:122]
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+# 2 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 4 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+# 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:160]
+# 6 Sznur::~Sznur                               [/Users/mateusz/Desktop/source.cpp:258]
+# 7 Sznur::~Sznur                               [/Users/mateusz/Desktop/source.cpp:250]
+# 8 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: A0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: 0x004ed1c8-0x004ed1cc overlaps memory 0x004ed1c0-0x004ed1cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+Note: instruction: cmp    0x08(%eax) $0x00000000
+
+Error #8: INVALID HEAP ARGUMENT to free 0x004ed1c0
+# 0 replace_operator_delete    
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+# 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+# 6 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:160]
+# 7 Sznur::~Sznur                               [/Users/mateusz/Desktop/source.cpp:258]
+# 8 Sznur::~Sznur                               [/Users/mateusz/Desktop/source.cpp:250]
+# 9 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: ‡0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: memory was previously freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+
+Error #9: INVALID HEAP ARGUMENT to free 0xbff679a0
+# 0 replace_operator_delete    
+# 1 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:162]
+# 2 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:160]
+# 3 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:258]
+# 4 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:250]
+# 5 main                                    [/Users/mateusz/Desktop/source.cpp:349]
+Note: (0:00:00.000 in thread 273626
+
+Error #10: INVALID HEAP ARGUMENT to free 0x004ed1f0
+# 0 replace_operator_delete    
+# 1 Sznur::~Sznur                         [/Users/mateusz/Desktop/source.cpp:258]
+# 2 Sznur::~Sznur                         [/Users/mateusz/Desktop/source.cpp:250]
+# 3 main                                  [/Users/mateusz/Desktop/source.cpp:349]
+Note: ;0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: memory was previously freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:258]
+Note: # 2 Sznur::~Sznur                                   [/Users/mateusz/Desktop/source.cpp:250]
+Note: # 3 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:273]
+Note: # 4 WezelKompozycji::~WezelKompozycji               [/Users/mateusz/Desktop/source.cpp:272]
+Note: # 5 Kompozycja::~Kompozycja                         [/Users/mateusz/Desktop/source.cpp:322]
+
+Error #11: INVALID HEAP ARGUMENT to free 0x0009bed0
+# 0 replace_operator_delete    
+# 1 Sznur::~Sznur                         [/Users/mateusz/Desktop/source.cpp:260]
+# 2 Sznur::~Sznur                         [/Users/mateusz/Desktop/source.cpp:250]
+# 3 main                                  [/Users/mateusz/Desktop/source.cpp:349]
+Note: ,0:00:00.000 in thread 273626
+
+Error #12: UNADDRESSABLE ACCESS of freed memory: reading 0x004ed1c8-0x004ed1cc 4 byte(s)
+# 0 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:122]
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+# 2 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 4 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: Ë0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: 0x004ed1c8-0x004ed1cc overlaps memory 0x004ed1c0-0x004ed1cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+Note: instruction: cmp    0x08(%eax) $0x00000000
+
+Error #13: INVALID HEAP ARGUMENT to free 0x004ed1c0
+# 0 replace_operator_delete    
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+# 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+# 5 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: 0:00:00.000 in thread 273626
+Note: next higher malloc: 0x004ed240-0x004ee240
+Note: memory was previously freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:162]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      5 unique,     5 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      8 unique,     8 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.8121.000/results.txt

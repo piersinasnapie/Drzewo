@@ -1,0 +1,47 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 12275: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Developer/Utilities/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: LEAK 4 direct bytes 0x004b0340-0x004b0344 + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 Heap<>::addElement                 [./Heap.h:95]
+# 2 main                               [/Users/mateusz/Developer/C++/AiSD2_priorityQueue_heap/priorityQueue.cpp:14]
+
+Error #2: LEAK 4 direct bytes 0x004b0368-0x004b036c + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 Heap<>::addElement                 [./Heap.h:95]
+# 2 main                               [/Users/mateusz/Developer/C++/AiSD2_priorityQueue_heap/priorityQueue.cpp:15]
+
+Error #3: LEAK 4 direct bytes 0x004b0390-0x004b0394 + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 Heap<>::addElement                 [./Heap.h:95]
+# 2 main                               [/Users/mateusz/Developer/C++/AiSD2_priorityQueue_heap/priorityQueue.cpp:16]
+
+Error #4: LEAK 4 direct bytes 0x004b13d8-0x004b13dc + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 Heap<>::getItem                    [./Heap.h:75]
+# 2 main                               [/Users/mateusz/Developer/C++/AiSD2_priorityQueue_heap/priorityQueue.cpp:19]
+
+Error #5: LEAK 4 direct bytes 0x004b1400-0x004b1404 + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 Heap<>::getItem                    [./Heap.h:75]
+# 2 main                               [/Users/mateusz/Developer/C++/AiSD2_priorityQueue_heap/priorityQueue.cpp:22]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      5 unique,     5 total,     20 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Developer/Utilities/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.12275.000/results.txt

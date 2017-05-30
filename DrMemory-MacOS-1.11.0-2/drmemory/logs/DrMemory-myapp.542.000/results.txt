@@ -1,0 +1,99 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 542: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: INVALID HEAP ARGUMENT to free 0xbffbe9a0
+# 0 replace_operator_delete    
+# 1 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:167]
+# 2 WezelSznura::~WezelSznura               [/Users/mateusz/Desktop/source.cpp:164]
+# 3 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:263]
+# 4 Sznur::~Sznur                           [/Users/mateusz/Desktop/source.cpp:255]
+# 5 main                                    [/Users/mateusz/Desktop/source.cpp:349]
+Note: þ0:00:00.000 in thread 7969
+
+Error #2: UNADDRESSABLE ACCESS of freed memory: reading 0x004951c8-0x004951cc 4 byte(s)
+# 0 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:126]
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+# 2 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 4 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: ñ0:00:00.000 in thread 7969
+Note: 0x004951c8-0x004951cc overlaps memory 0x004951c0-0x004951cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:167]
+Note: instruction: cmp    0x08(%eax) $0x00000000
+
+Error #3: UNADDRESSABLE ACCESS of freed memory: writing 0x004951c8-0x004951cc 4 byte(s)
+# 0 Powiazanie::~Powiazanie                     [/Users/mateusz/Desktop/source.cpp:17]
+# 1 Powiazanie::~Powiazanie                     [/Users/mateusz/Desktop/source.cpp:16]
+# 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+# 3 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+# 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 5 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 6 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: )0:00:00.000 in thread 7969
+Note: 0x004951c8-0x004951cc overlaps memory 0x004951c0-0x004951cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:167]
+Note: instruction: mov    $0x00000000 -> 0x08(%eax)
+
+Error #4: UNADDRESSABLE ACCESS of freed memory: writing 0x004951c4-0x004951c8 4 byte(s)
+# 0 Powiazanie::~Powiazanie                     [/Users/mateusz/Desktop/source.cpp:18]
+# 1 Powiazanie::~Powiazanie                     [/Users/mateusz/Desktop/source.cpp:16]
+# 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+# 3 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+# 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 5 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 6 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: k0:00:00.000 in thread 7969
+Note: 0x004951c4-0x004951c8 overlaps memory 0x004951c0-0x004951cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:167]
+Note: instruction: mov    $0x00000000 -> 0x04(%eax)
+
+Error #5: INVALID HEAP ARGUMENT to free 0x004951c0
+# 0 replace_operator_delete    
+# 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+# 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+# 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+# 5 main                                        [/Users/mateusz/Desktop/source.cpp:349]
+Note: ‘0:00:00.000 in thread 7969
+Note: memory was previously freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:131]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [/Users/mateusz/Desktop/source.cpp:123]
+Note: # 3 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 4 Koralik::~Koralik                           [/Users/mateusz/Desktop/source.cpp:137]
+Note: # 5 WezelSznura::~WezelSznura                   [/Users/mateusz/Desktop/source.cpp:167]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      3 unique,     3 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      2 unique,     2 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.542.000/results.txt

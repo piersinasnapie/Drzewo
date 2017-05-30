@@ -1,0 +1,34 @@
+# File for suppressing errors found in pid 8427: "myapp"
+
+# Suppression for Error #1
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!cos::~cos
+myapp!cos::~cos
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x12b8>
+<myapp+0x1217>
+<myapp+0x110e>
+
+# Suppression for Error #2
+INVALID HEAP ARGUMENT
+name=Error #2 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!cos::~cos
+myapp!cos::~cos
+myapp!main
+
+## Mod+offs-style suppression for Error #2:
+INVALID HEAP ARGUMENT
+name=Error #2 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x12b8>
+<myapp+0x1217>
+<myapp+0x1156>
+

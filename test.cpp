@@ -561,6 +561,7 @@ public:
         other_tree.insert(13,child,1);
         Drzewo<int> tree(other_tree);
         CPPUNIT_ASSERT_EQUAL(true, other_tree.size() == tree.size());
+        CPPUNIT_ASSERT_EQUAL(true, tree.root() != other_tree.root());
     }
 
     /**

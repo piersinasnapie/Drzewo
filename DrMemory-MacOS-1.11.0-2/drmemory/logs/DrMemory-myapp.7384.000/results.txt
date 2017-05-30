@@ -1,0 +1,72 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 7384: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: INVALID HEAP ARGUMENT to free 0xbfffd970
+# 0 replace_operator_delete    
+# 1 WezelSznura::~WezelSznura               [//Users/mateusz/Downloads/source.cpp:162]
+# 2 WezelSznura::~WezelSznura               [//Users/mateusz/Downloads/source.cpp:160]
+# 3 Sznur::~Sznur                           [//Users/mateusz/Downloads/source.cpp:258]
+# 4 Sznur::~Sznur                           [//Users/mateusz/Downloads/source.cpp:250]
+# 5 main                                    [//Users/mateusz/Downloads/source.cpp:284]
+Note: µ0:00:00.000 in thread 244204
+
+Error #2: INVALID HEAP ARGUMENT to free 0x00005ef8
+# 0 replace_operator_delete    
+# 1 Sznur::~Sznur                         [//Users/mateusz/Downloads/source.cpp:260]
+# 2 Sznur::~Sznur                         [//Users/mateusz/Downloads/source.cpp:250]
+# 3 main                                  [//Users/mateusz/Downloads/source.cpp:284]
+Note: <0:00:00.000 in thread 244204
+
+Error #3: UNADDRESSABLE ACCESS of freed memory: reading 0x003c91c8-0x003c91cc 4 byte(s)
+# 0 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:122]
+# 1 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:119]
+# 2 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+# 3 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+# 4 main                                        [//Users/mateusz/Downloads/source.cpp:284]
+Note: {0:00:00.000 in thread 244204
+Note: next higher malloc: 0x003c9218-0x003ca218
+Note: 0x003c91c8-0x003c91cc overlaps memory 0x003c91c0-0x003c91cc that was freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [//Users/mateusz/Downloads/source.cpp:162]
+Note: instruction: cmp    0x08(%eax) $0x00000000
+
+Error #4: INVALID HEAP ARGUMENT to free 0x003c91c0
+# 0 replace_operator_delete    
+# 1 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:127]
+# 2 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:119]
+# 3 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+# 4 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+# 5 main                                        [//Users/mateusz/Downloads/source.cpp:284]
+Note: Ç0:00:00.000 in thread 244204
+Note: next higher malloc: 0x003c9218-0x003ca218
+Note: memory was previously freed here:
+Note: # 0 replace_operator_delete    
+Note: # 1 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:127]
+Note: # 2 ListaPowiazan::~ListaPowiazan               [//Users/mateusz/Downloads/source.cpp:119]
+Note: # 3 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+Note: # 4 Koralik::~Koralik                           [//Users/mateusz/Downloads/source.cpp:133]
+Note: # 5 WezelSznura::~WezelSznura                   [//Users/mateusz/Downloads/source.cpp:162]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      1 unique,     1 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      3 unique,     3 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.7384.000/results.txt

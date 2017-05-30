@@ -1,0 +1,20 @@
+# File for suppressing errors found in pid 1746: "myapp.x"
+
+# Suppression for Error #1
+LEAK
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_new_array
+myapp.x!ms::Vector::Vector
+myapp.x!ms::Vector::Vector
+myapp.x!ms::operator+
+myapp.x!main
+
+## Mod+offs-style suppression for Error #1:
+LEAK
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31b00>
+<myapp.x+0x13c6>
+<myapp.x+0x14f4>
+<myapp.x+0x1c5b>
+<myapp.x+0x289d>
+

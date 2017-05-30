@@ -1,0 +1,60 @@
+# File for suppressing errors found in pid 7328: "myapp"
+
+# Suppression for Error #1
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!WezelSznura::~WezelSznura
+myapp!WezelSznura::~WezelSznura
+myapp!Sznur::~Sznur
+myapp!Sznur::~Sznur
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+INVALID HEAP ARGUMENT
+name=Error #1 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x29fa>
+<myapp+0x29a7>
+<myapp+0x2946>
+<myapp+0x1557>
+<myapp+0x10ca>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+myapp!ListaPowiazan::~ListaPowiazan
+myapp!ListaPowiazan::~ListaPowiazan
+myapp!Koralik::~Koralik
+myapp!Koralik::~Koralik
+myapp!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<myapp+0x2a96>
+<myapp+0x2a67>
+<myapp+0x2a4a>
+<myapp+0x1597>
+<myapp+0x10da>
+
+# Suppression for Error #3
+INVALID HEAP ARGUMENT
+name=Error #3 (update to meaningful name)
+libdrmemorylib.1.11.0.dylib!replace_operator_delete
+myapp!ListaPowiazan::~ListaPowiazan
+myapp!ListaPowiazan::~ListaPowiazan
+myapp!Koralik::~Koralik
+myapp!Koralik::~Koralik
+myapp!main
+
+## Mod+offs-style suppression for Error #3:
+INVALID HEAP ARGUMENT
+name=Error #3 (update to meaningful name)
+<libdrmemorylib.1.11.0.dylib+0x31fb0>
+<myapp+0x2aeb>
+<myapp+0x2a67>
+<myapp+0x2a4a>
+<myapp+0x1597>
+<myapp+0x10da>
+

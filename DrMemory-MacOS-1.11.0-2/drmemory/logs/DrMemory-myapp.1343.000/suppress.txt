@@ -1,0 +1,30 @@
+# File for suppressing errors found in pid 1343: "myapp"
+
+# Suppression for Error #1
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+myapp!std::__1::operator>><>
+myapp!przetworzStrumien
+myapp!main
+
+## Mod+offs-style suppression for Error #1:
+UNINITIALIZED READ
+name=Error #1 (update to meaningful name)
+<myapp+0x13b0>
+<myapp+0x830>
+<myapp+0x18b7>
+
+# Suppression for Error #2
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+myapp!std::__1::operator>><>
+myapp!przetworzStrumien
+myapp!main
+
+## Mod+offs-style suppression for Error #2:
+UNADDRESSABLE ACCESS
+name=Error #2 (update to meaningful name)
+<myapp+0x13b0>
+<myapp+0x830>
+<myapp+0x18b7>
+

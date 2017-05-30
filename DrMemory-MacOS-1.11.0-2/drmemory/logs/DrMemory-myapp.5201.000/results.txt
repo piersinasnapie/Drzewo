@@ -1,0 +1,36 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+Dr. Memory results for pid 5201: "myapp"
+Recorded 3 suppression(s) from default /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+
+Error #1: LEAK 8 direct bytes 0x0041d190-0x0041d198 + 24 indirect bytes
+# 0 replace_operator_new       
+# 1 main                               [/Users/mateusz/Desktop/newSource.cpp:322]
+
+Error #2: LEAK 8 direct bytes 0x0041d1b8-0x0041d1c0 + 36 indirect bytes
+# 0 replace_operator_new       
+# 1 main                               [/Users/mateusz/Desktop/newSource.cpp:323]
+
+Error #3: LEAK 12 direct bytes 0x0041d2d0-0x0041d2dc + 0 indirect bytes
+# 0 replace_operator_new       
+# 1 ListaPowiazan::dodajPowiazanie               [/Users/mateusz/Desktop/newSource.cpp:102]
+# 2 Koralik::dodajPowiazanie                     [/Users/mateusz/Desktop/newSource.cpp:178]
+# 3 main                                         [/Users/mateusz/Desktop/newSource.cpp:331]
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      3 unique,     3 total,     88 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      1 unique,     1 total,   4096 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/mateusz/Downloads/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-myapp.5201.000/results.txt

@@ -1,0 +1,367 @@
+process=5343, parent=5336
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:37:30
+start time: 0:00:00.000 == 00:00:00.000 01/01/1601
+Recorded 3 suppression(s) from default /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/bin/suppress-default.txt
+new thread #0 id=964410
+
+module load event: "mem.x" 0x00046000-0x0004e000 modid: 1 /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/mem.x
+
+module load event: "libdrpreload.dylib" 0x0004f000-0x00060000 modid: 2 /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/dynamorio/lib32/release/libdrpreload.dylib
+
+module load event: "dyld" 0x000ba000-0x00133000 modid: 3 /usr/lib/dyld
+WARNING: assuming operator new is non-placement in dyld @0x000da1a0
+WARNING: assuming operator new[] is non-placement in dyld @0x000da224
+
+module load event: "libdynamorio.dylib" 0x00133000-0x002ca000 modid: 4 /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/dynamorio/lib32/release/libdynamorio.dylib
+
+module load event: "libdrmemorylib.1.11.0.dylib" 0x002ca000-0x0043b000 modid: 5 /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/bin/release/libdrmemorylib.dylib
+
+module load event: "libSystem.B.dylib" 0xa0136000-0xaf3b0000 modid: 6 /usr/lib/libSystem.B.dylib
+
+module load event: "libc++.1.dylib" 0xa02cd000-0xaf3b0000 modid: 7 /usr/lib/libc++.1.dylib
+WARNING: assuming operator new[] is non-placement in libc++.1.dylib @0xa02e57a7
+WARNING: assuming operator new[] is non-placement in libc++.1.dylib @0xa02e57c3
+WARNING: assuming operator new is non-placement in libc++.1.dylib @0xa02e57df
+WARNING: assuming operator new is non-placement in libc++.1.dylib @0xa02e57fb
+WARNING: assuming operator delete is non-placement in libc++.1.dylib @0xa030a994
+WARNING: assuming operator delete[] is non-placement in libc++.1.dylib @0xa030a99d
+
+module load event: "libc++abi.dylib" 0xa0324000-0xaf3b0000 modid: 8 /usr/lib/libc++abi.dylib
+WARNING: assuming operator new is non-placement in libc++abi.dylib @0xa0342620
+WARNING: assuming operator new is non-placement in libc++abi.dylib @0xa03426a3
+WARNING: assuming operator new[] is non-placement in libc++abi.dylib @0xa03426e4
+WARNING: assuming operator new[] is non-placement in libc++abi.dylib @0xa03426e9
+
+module load event: "libobjc.A.dylib" 0xa0e2f000-0xaf3b0000 modid: 9 /usr/lib/libobjc.A.dylib
+
+module load event: "libcache.dylib" 0xa15f6000-0xaf3b0000 modid: 10 /usr/lib/system/libcache.dylib
+
+module load event: "libcommonCrypto.dylib" 0xa15fb000-0xaf3b0000 modid: 11 /usr/lib/system/libcommonCrypto.dylib
+
+module load event: "libcompiler_rt.dylib" 0xa1606000-0xaf3b0000 modid: 12 /usr/lib/system/libcompiler_rt.dylib
+
+module load event: "libcopyfile.dylib" 0xa160c000-0xaf3b0000 modid: 13 /usr/lib/system/libcopyfile.dylib
+
+module load event: "libcorecrypto.dylib" 0xa1615000-0xaf3b0000 modid: 14 /usr/lib/system/libcorecrypto.dylib
+
+module load event: "libdispatch.dylib" 0xa167c000-0xaf3b0000 modid: 15 /usr/lib/system/libdispatch.dylib
+
+module load event: "libdyld.dylib" 0xa16aa000-0xaf3b0000 modid: 16 /usr/lib/system/libdyld.dylib
+
+module load event: "libkeymgr.dylib" 0xa16b0000-0xaf3b0000 modid: 17 /usr/lib/system/libkeymgr.dylib
+
+module load event: "liblaunch.dylib" 0xa16be000-0xaf3b0000 modid: 18 /usr/lib/system/liblaunch.dylib
+
+module load event: "libmacho.dylib" 0xa16bf000-0xaf3b0000 modid: 19 /usr/lib/system/libmacho.dylib
+
+module load event: "libquarantine.dylib" 0xa16c6000-0xaf3b0000 modid: 20 /usr/lib/system/libquarantine.dylib
+
+module load event: "libremovefile.dylib" 0xa16c9000-0xaf3b0000 modid: 21 /usr/lib/system/libremovefile.dylib
+
+module load event: "libsystem_asl.dylib" 0xa16cb000-0xaf3b0000 modid: 22 /usr/lib/system/libsystem_asl.dylib
+
+module load event: "libsystem_blocks.dylib" 0xa16e3000-0xaf3b0000 modid: 23 /usr/lib/system/libsystem_blocks.dylib
+
+module load event: "libsystem_c.dylib" 0xa16e4000-0xaf3b0000 modid: 24 /usr/lib/system/libsystem_c.dylib
+
+module load event: "libsystem_configuration.dylib" 0xa1773000-0xaf3b0000 modid: 25 /usr/lib/system/libsystem_configuration.dylib
+
+module load event: "libsystem_coreservices.dylib" 0xa1777000-0xaf3b0000 modid: 26 /usr/lib/system/libsystem_coreservices.dylib
+
+module load event: "libsystem_coretls.dylib" 0xa177b000-0xaf3b0000 modid: 27 /usr/lib/system/libsystem_coretls.dylib
+
+module load event: "libsystem_dnssd.dylib" 0xa1794000-0xaf3b0000 modid: 28 /usr/lib/system/libsystem_dnssd.dylib
+
+module load event: "libsystem_info.dylib" 0xa179b000-0xaf3b0000 modid: 29 /usr/lib/system/libsystem_info.dylib
+
+module load event: "libsystem_kernel.dylib" 0xa17c3000-0xaf3b0000 modid: 30 /usr/lib/system/libsystem_kernel.dylib
+
+module load event: "libsystem_m.dylib" 0xa17e5000-0xaf3b0000 modid: 31 /usr/lib/system/libsystem_m.dylib
+
+module load event: "libsystem_malloc.dylib" 0xa1832000-0xaf3b0000 modid: 32 /usr/lib/system/libsystem_malloc.dylib
+
+module load event: "libsystem_network.dylib" 0xa184d000-0xaf3b0000 modid: 33 /usr/lib/system/libsystem_network.dylib
+
+module load event: "libsystem_networkextension.dylib" 0xa18a4000-0xaf3b0000 modid: 34 /usr/lib/system/libsystem_networkextension.dylib
+
+module load event: "libsystem_notify.dylib" 0xa18ae000-0xaf3b0000 modid: 35 /usr/lib/system/libsystem_notify.dylib
+
+module load event: "libsystem_platform.dylib" 0xa18b7000-0xaf3b0000 modid: 36 /usr/lib/system/libsystem_platform.dylib
+
+module load event: "libsystem_pthread.dylib" 0xa18be000-0xaf3b0000 modid: 37 /usr/lib/system/libsystem_pthread.dylib
+
+module load event: "libsystem_sandbox.dylib" 0xa18c8000-0xaf3b0000 modid: 38 /usr/lib/system/libsystem_sandbox.dylib
+
+module load event: "libsystem_secinit.dylib" 0xa18cc000-0xaf3b0000 modid: 39 /usr/lib/system/libsystem_secinit.dylib
+
+module load event: "libsystem_symptoms.dylib" 0xa18cf000-0xaf3b0000 modid: 40 /usr/lib/system/libsystem_symptoms.dylib
+
+module load event: "libsystem_trace.dylib" 0xa18d7000-0xaf3b0000 modid: 41 /usr/lib/system/libsystem_trace.dylib
+
+module load event: "libunwind.dylib" 0xa18ea000-0xaf3b0000 modid: 42 /usr/lib/system/libunwind.dylib
+
+module load event: "libxpc.dylib" 0xa18f1000-0xaf3b0000 modid: 43 /usr/lib/system/libxpc.dylib
+WARNING: unhandled system calls found
+
+NEW THREAD: main thread 964410
+
+
+Error #1: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c480-0x0043c484 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d61 <mem.x+0x1d61>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 5 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 6 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 7 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 8 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: —0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c4d8-0x0043c4f0
+Note: prev lower malloc:  0x0043c418-0x0043c430
+Note: 0x0043c480-0x0043c484 overlaps memory 0x0043c478-0x0043c490 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: instruction: mov    0x08(%eax) -> %eax
+	error end
+
+Error #2: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c480-0x0043c484 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d7f <mem.x+0x1d7f>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 5 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 6 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 7 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 8 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: Ë0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c4d8-0x0043c4f0
+Note: prev lower malloc:  0x0043c418-0x0043c430
+Note: 0x0043c480-0x0043c484 overlaps memory 0x0043c478-0x0043c490 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: instruction: mov    %eax -> 0x08(%ecx)
+	error end
+
+Error #3: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c420-0x0043c424 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d61 <mem.x+0x1d61>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 5 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 6 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 7 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: z0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c600-0x0043c618
+Note: prev lower malloc:  0x0043c3e8-0x0043c3f8
+Note: 0x0043c420-0x0043c424 overlaps memory 0x0043c418-0x0043c430 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: instruction: mov    0x08(%eax) -> %eax
+	error end
+
+Error #4: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c420-0x0043c424 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d7f <mem.x+0x1d7f>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 5 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 6 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 7 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: e0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c600-0x0043c618
+Note: prev lower malloc:  0x0043c3e8-0x0043c3f8
+Note: 0x0043c420-0x0043c424 overlaps memory 0x0043c418-0x0043c430 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: instruction: mov    %eax -> 0x08(%ecx)
+	error end
+
+Error #5: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c2f8-0x0043c2fc 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d61 <mem.x+0x1d61>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 4 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 5 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 6 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: Y0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c350-0x0043c368
+Note: prev lower malloc:  0x0043c2c0-0x0043c2d0
+Note: 0x0043c2f8-0x0043c2fc overlaps memory 0x0043c2f0-0x0043c308 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: # 5 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+Note: instruction: mov    0x08(%eax) -> %eax
+	error end
+
+Error #6: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c2f8-0x0043c2fc 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d7f <mem.x+0x1d7f>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 4 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 5 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 6 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: ≥0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c350-0x0043c368
+Note: prev lower malloc:  0x0043c2c0-0x0043c2d0
+Note: 0x0043c2f8-0x0043c2fc overlaps memory 0x0043c2f0-0x0043c308 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: # 5 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+Note: instruction: mov    %eax -> 0x08(%ecx)
+	error end
+
+Error #7: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c910-0x0043c914 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d61 <mem.x+0x1d61>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 6 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 7 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 8 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 9 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: ù0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c968-0x0043c980
+Note: prev lower malloc:  0x0043c8e0-0x0043c8e4
+Note: 0x0043c910-0x0043c914 overlaps memory 0x0043c908-0x0043c920 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: instruction: mov    0x08(%eax) -> %eax
+	error end
+
+Error #8: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c910-0x0043c914 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d7f <mem.x+0x1d7f>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 6 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 7 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 8 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 9 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: ò0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c968-0x0043c980
+Note: prev lower malloc:  0x0043c8e0-0x0043c8e4
+Note: 0x0043c910-0x0043c914 overlaps memory 0x0043c908-0x0043c920 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 4 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 5 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: instruction: mov    %eax -> 0x08(%ecx)
+	error end
+
+Error #9: UNADDRESSABLE ACCESS of freed memory: reading 0x0043c290-0x0043c294 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d61 <mem.x+0x1d61>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 3 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 4 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 5 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note:  0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c2c0-0x0043c2d0
+Note: prev lower malloc:  0x0043c228-0x0043c240
+Note: 0x0043c290-0x0043c294 overlaps memory 0x0043c288-0x0043c2a0 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: # 4 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+Note: # 5 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+Note: instruction: mov    0x08(%eax) -> %eax
+	error end
+
+Error #10: UNADDRESSABLE ACCESS of freed memory: writing 0x0043c290-0x0043c294 4 byte(s)
+# 0 Drzewo<>::delete_node (0x00047d7f <mem.x+0x1d7f>) modid:1
+# 1 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+# 2 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+# 3 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+# 4 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+# 5 main  (0x000471fb <mem.x+0x11fb>) modid:1
+Note: W0:00:00.000 in thread 964410
+Note: next higher malloc: 0x0043c2c0-0x0043c2d0
+Note: prev lower malloc:  0x0043c228-0x0043c240
+Note: 0x0043c290-0x0043c294 overlaps memory 0x0043c288-0x0043c2a0 that was freed here:
+Note: # 0 replace_operator_delete     (0x002fbfb0 <libdrmemorylib.1.11.0.dylib+0x31fb0>) modid:5
+Note: # 1 Drzewo<>::delete_node (0x00047de5 <mem.x+0x1de5>) modid:1
+Note: # 2 Drzewo<>::delete_node (0x00047bdb <mem.x+0x1bdb>) modid:1
+Note: # 3 Drzewo<>::delete_tree (0x00047a2c <mem.x+0x1a2c>) modid:1
+Note: # 4 Drzewo<>::~Drzewo (0x000479e5 <mem.x+0x19e5>) modid:1
+Note: # 5 Drzewo<>::~Drzewo (0x00047817 <mem.x+0x1817>) modid:1
+Note: instruction: mov    %eax -> 0x08(%ecx)
+	error end
+
+DUPLICATE ERROR COUNTS:
+	Error #   1:      4
+	Error #   2:      4
+	Error #   3:      9
+	Error #   4:      9
+	Error #   5:      2
+	Error #   6:      2
+	Error #   7:      7
+	Error #   8:      7
+	Error #   9:      2
+	Error #  10:      2
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+     10 unique,    48 total unaddressable access(es)
+      0 unique,     0 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+    105 ignored assumed-innocuous system leak(s)
+      0 unique,     0 total,      0 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-mem.x.5343.000/results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential uninitialized access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential warning(s)
+      0 unique,     0 total,      0 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: /Users/Persi/Documents/UJ/rok2/semestr2/C++/Drzewo/DrMemory-MacOS-1.11.0-2/drmemory/logs/DrMemory-mem.x.5343.000/potential_errors.txt
+Exiting K0:00:00.000 in thread 964410
+LOG END
