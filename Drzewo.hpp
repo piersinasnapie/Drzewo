@@ -46,6 +46,14 @@ private:
             {}
 
         ~Node(){}
+
+        bool operator!=(Node node)
+        {
+            return 
+            this->value != node.value &&
+            this->parent != node.parent && 
+            this->brother != node.brother;
+        }
 	};
 
     void delete_node(Node* node)
@@ -68,7 +76,7 @@ private:
                     }
                 }
             }
-        } 
+        }      
 
         delete node;
         number_of_nodes--;
@@ -140,6 +148,12 @@ public:
     typedef T value_type; 
     /** value_type& */
     typedef T& reference; 
+    /** const value_type& */
+    typedef const T& const_reference;
+    /** pointer */
+    typedef T* pointer;
+    /** size_t - unsigned integer type */
+    typedef std::size_t size_type;
 
     /**
      * \class iterator
@@ -496,7 +510,7 @@ void Drzewo<T>::erase(const iterator& it)
 template<typename T>
 inline typename Drzewo<T>::iterator Drzewo<T>::getChild(const iterator& parent, std::size_t index)
 {
-    return iterator(parent.ptr->children[index]);
+    return iterator(parent.ptr->children.at(index));
 }
 
 template<typename T>

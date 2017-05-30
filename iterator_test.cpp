@@ -92,7 +92,7 @@ public:
             CPPUNIT_ASSERT_EQUAL(true, *tree_it == *other_tree_it);
             CPPUNIT_ASSERT_EQUAL(true, tree_it != other_tree_it);
 
-            ++tree_it;
+            tree_it++;
             ++other_tree_it;
         }
     }
