@@ -23,6 +23,7 @@ public:
         suite->addTest(new TestCaller<IteratorTest>("only_root", &IteratorTest::only_root ));
         suite->addTest(new TestCaller<IteratorTest>("increment", &IteratorTest::increment ));
         suite->addTest(new TestCaller<IteratorTest>("more_levels", &IteratorTest::more_levels ));
+        suite->addTest(new TestCaller<IteratorTest>("post_increment", &IteratorTest::post_increment ));
         suite->addTest(new TestCaller<IteratorTest>("show_big_tree", &IteratorTest::show_big_tree ));
         suite->addTest(new TestCaller<IteratorTest>("traverse_empty_tree", &IteratorTest::traverse_empty_tree ));
         suite->addTest(new TestCaller<IteratorTest>("oprator_increment_brother", &IteratorTest::oprator_increment_brother ));
@@ -76,6 +77,18 @@ public:
         auto child = tree.insert(4,root,0);
         ++child;
         CPPUNIT_ASSERT_EQUAL(true, child == tree.end());
+    }
+
+    /**
+     * Operator 'POST' inkrementacji
+     */
+    void post_increment()
+    {
+        Drzewo<int> tree(4);
+        auto child = tree.insert(5,tree.root(),0);
+        auto root = tree.root();
+        CPPUNIT_ASSERT_EQUAL(true, root++ == tree.root());
+        CPPUNIT_ASSERT_EQUAL(true, root == child);
     }
 
     /** 

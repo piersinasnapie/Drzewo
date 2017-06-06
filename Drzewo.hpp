@@ -643,7 +643,7 @@ typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
 template<typename T>
 typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int dummy_arg) // do poprawy
 {
-    Node* tmp;
+    Node* tmp = nullptr;
 
     if(ptr == nullptr)
     {
@@ -666,7 +666,7 @@ typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int dummy_arg) // d
         {
             tmp = ptr;
             ptr = ptr->parent;
-            return *this;
+            return iterator(tmp);
         }
         while(ptr->parent->brother == nullptr)
         {
@@ -675,12 +675,12 @@ typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int dummy_arg) // d
             {
                 tmp = ptr;
                 ptr = ptr->parent;
-                return *this;
+                return iterator(tmp);
             }
         }
         ptr = ptr->parent->brother;
     }
-    return *this;
+    return iterator(tmp);
 }
 
 
