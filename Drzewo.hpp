@@ -76,10 +76,7 @@ private:
                     }
                 }
             }
-        }    
-        else{
-            //delete tree
-        }  
+        } 
 
         delete node;
         number_of_nodes--;
@@ -219,7 +216,7 @@ public:
          * 
          * @return  Wskaźnik do samego siebie.
          */
-        iterator operator++(int dummy_arg);
+        iterator operator++(int);
 
         /**
          * Zwraca adres do obiektu typu T przechowywanego we wskaźniku.
@@ -290,8 +287,7 @@ public:
      * Wstawia element o podanej wartości do drzewa, do listy dzieci rodzica, wskazywanego
      * przez iterator, na określoną przez indeks pozycję. Zwraca iterator pokazujący na 
      * nowo dodany węzeł. W przypadku pustego drzewa oraz podania iteratora wskazującego na koniec kontenera
-     * oraz indexu równego '0' zostanie utworzony korzeń zawierający obiekt 'value'. Zwrócony zostanie iterator
-     * pokazujący na korzeń drzewa.
+     * oraz indexu równego '0' zostanie utworzony korzeń zawierający obiekt 'value'. 
      * 
      * W przypadku wywołania procedury insert z argumentami: iterator pokazujący na koniec oraz indexem równym 0,
      * na niepustym drzewie zachowanie funkcji jest niezdefiniowane. 
@@ -641,46 +637,11 @@ typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
 }
 
 template<typename T>
-typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int dummy_arg) // do poprawy
+typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int)
 {
-    Node* tmp = nullptr;
-
-    if(ptr == nullptr)
-    {
-        return *this;
-    }
-
-    if(ptr->children.size())
-    {
-        tmp = ptr;
-        this->ptr = ptr->children[0];
-    }
-    else if(ptr->brother != nullptr)
-    {
-        tmp = ptr;
-        ptr = ptr->brother;
-    }
-    else
-    {
-        if(ptr->parent == nullptr)
-        {
-            tmp = ptr;
-            ptr = ptr->parent;
-            return iterator(tmp);
-        }
-        while(ptr->parent->brother == nullptr)
-        {
-            ptr = ptr->parent;
-            if(ptr->parent == nullptr)
-            {
-                tmp = ptr;
-                ptr = ptr->parent;
-                return iterator(tmp);
-            }
-        }
-        ptr = ptr->parent->brother;
-    }
-    return iterator(tmp);
+    iterator tmp = *this;
+    operator++();
+    return tmp;
 }
 
 
