@@ -58,7 +58,7 @@ private:
 
     void delete_node(Node* node)
     {
-        for(Node* child : node->children)
+        for(Node*& child : node->children)
         {
             delete_node(child);
         }
@@ -76,7 +76,10 @@ private:
                     }
                 }
             }
-        }      
+        }    
+        else{
+            //delete tree
+        }  
 
         delete node;
         number_of_nodes--;
@@ -91,12 +94,12 @@ private:
         }
     }
 
-    inline void copy_elements(Node* current_root, Node* other_root, size_t size)
+    void copy_elements(Node* current_root, Node* other_root, size_t size)
     {
         Node* other_current = other_root;
         Node* current = current_root;
         
-        while(number_of_nodes < size)
+        while(number_of_nodes < size) // sugestia końca pętli
         {
             if(other_current->children.size())
             {
@@ -169,7 +172,7 @@ public:
         Node* ptr;
         friend class Drzewo;
 
-        iterator(Node* _ptr=nullptr): 
+        iterator(Node* _ptr): 
             ptr(_ptr)
             {}
 
@@ -216,7 +219,7 @@ public:
          * 
          * @return  Wskaźnik do samego siebie.
          */
-        iterator& operator++(int);
+        iterator operator++(int dummy_arg);
 
         /**
          * Zwraca adres do obiektu typu T przechowywanego we wskaźniku.
@@ -243,8 +246,7 @@ public:
     };
 
     /** 
-     * Konstruktor domyślny. Inicjuje wkaźnik do korzenia na 'nullptr'. 
-     * Nowo utworzone drzewo posiada 0 węzłów. 
+     * Konstruktor domyślny. Nowo utworzone drzewo posiada 0 węzłów. 
      * Zostanie utworzone puste drzewo. 
      *
      */
@@ -605,6 +607,10 @@ inline T* Drzewo<T>::iterator::operator->()
 template<typename T>
 typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
 {
+    if(ptr == nullptr)
+    {
+        return *this;
+    }
     if(ptr->children.size())
     {
         this->ptr = ptr->children[0];
@@ -615,6 +621,11 @@ typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
     }
     else
     {
+        if(ptr->parent == nullptr)
+        {
+            ptr = ptr->parent;
+            return *this;
+        }
         while(ptr->parent->brother == nullptr)
         {
             ptr = ptr->parent;
@@ -630,9 +641,46 @@ typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++()
 }
 
 template<typename T>
-typename Drzewo<T>::iterator& Drzewo<T>::iterator::operator++(int)
+typename Drzewo<T>::iterator Drzewo<T>::iterator::operator++(int dummy_arg) // do poprawy
 {
-    return operator++();
+    Node* tmp;
+
+    if(ptr == nullptr)
+    {
+        return *this;
+    }
+
+    if(ptr->children.size())
+    {
+        tmp = ptr;
+        this->ptr = ptr->children[0];
+    }
+    else if(ptr->brother != nullptr)
+    {
+        tmp = ptr;
+        ptr = ptr->brother;
+    }
+    else
+    {
+        if(ptr->parent == nullptr)
+        {
+            tmp = ptr;
+            ptr = ptr->parent;
+            return *this;
+        }
+        while(ptr->parent->brother == nullptr)
+        {
+            ptr = ptr->parent;
+            if(ptr->parent == nullptr)
+            {
+                tmp = ptr;
+                ptr = ptr->parent;
+                return *this;
+            }
+        }
+        ptr = ptr->parent->brother;
+    }
+    return *this;
 }
 
 

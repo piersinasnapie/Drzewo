@@ -19,6 +19,10 @@ public:
     {
         TestSuite* suite = new TestSuite("'iterator' test.");
 
+        suite->addTest(new TestCaller<IteratorTest>("empty_tree", &IteratorTest::empty_tree ));
+        suite->addTest(new TestCaller<IteratorTest>("only_root", &IteratorTest::only_root ));
+        suite->addTest(new TestCaller<IteratorTest>("increment", &IteratorTest::increment ));
+        suite->addTest(new TestCaller<IteratorTest>("more_levels", &IteratorTest::more_levels ));
         suite->addTest(new TestCaller<IteratorTest>("show_big_tree", &IteratorTest::show_big_tree ));
         suite->addTest(new TestCaller<IteratorTest>("traverse_empty_tree", &IteratorTest::traverse_empty_tree ));
         suite->addTest(new TestCaller<IteratorTest>("oprator_increment_brother", &IteratorTest::oprator_increment_brother ));
@@ -26,6 +30,52 @@ public:
         suite->addTest(new TestCaller<IteratorTest>("operator_increment_uncle", &IteratorTest::operator_increment_uncle ));
     
         return suite;
+    }
+
+    /**
+     * Utworzono puste drzewo
+     */
+    void empty_tree()
+    {
+        Drzewo<int> tree;
+        auto begin = tree.begin();
+        auto end = tree.end();
+        CPPUNIT_ASSERT_EQUAL(true, begin == end);
+    }
+
+    /**
+     * Utworzono drzewo z jednym węzłem.
+     */
+    void only_root()
+    {
+        Drzewo<int> tree(4);
+        auto root = tree.begin();
+        ++root;
+        CPPUNIT_ASSERT_EQUAL(true, root == tree.end());
+    }
+
+    /**
+     * "Głupia" inkrementacja
+     */
+    void increment()
+    {
+        Drzewo<int> tree;
+        auto it = tree.end();
+        ++it;
+        ++it;
+        CPPUNIT_ASSERT_EQUAL(true, it == tree.end());
+    }
+
+    /**
+     * Utworzono drzewo z dodatkowym poziomem
+     */
+    void more_levels()
+    {
+        Drzewo<int> tree;
+        auto root = tree.insert(2,tree.end(),0);
+        auto child = tree.insert(4,root,0);
+        ++child;
+        CPPUNIT_ASSERT_EQUAL(true, child == tree.end());
     }
 
     /** 
