@@ -78,6 +78,7 @@ private:
             }
         } 
 
+        node->children.clear();
         delete node;
         number_of_nodes--;
     }
