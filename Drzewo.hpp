@@ -58,10 +58,10 @@ private:
 
     void delete_node(Node* node)
     {
-        for(Node*& child : node->children)
+        for(Node* child : node->children)
         {
             delete_node(child);
-        }
+        } 
 
         if(node != root_node)
         {
@@ -77,8 +77,7 @@ private:
                 }
             }
         } 
-
-        node->children.clear();
+        
         delete node;
         number_of_nodes--;
     }
@@ -339,24 +338,43 @@ public:
     /**
      * Zwraca iterator pokazujący na pierwszy element w drzewie - korzeń drzewa.
      * 
-     * @return  iterator pokazujący na pierwszy element w drzewie.
+     * @return  iterator
      */
-    inline iterator begin() const;
+    inline iterator begin();
+
+    /**
+     * Zwraca stały iterator pokazujący na pierwszy element w drzewie - korzeń drzewa.
+     * @return iterator 
+     */
+    inline iterator cbegin() const;
 
     /**
      * Zwraca iterator pokazujący na element za ostatnim elementem w drzewie.
-     * Pokazuje na rodzica(węzeł) korzenia, który jest wskaźnikiem na 'nullptr'.
      * 
      * @return  iterator  
      */
-    inline iterator end() const;
+    inline iterator end();
+
+    /**
+     * Zwraca stały iterator pokazujący na element za ostatnim elementem w drzewie.
+     * 
+     * @return  iterator  
+     */
+    inline iterator cend() const;
 
     /**
      * Zwraca iterator pokazujący na korzeń drzewa.
      * 
-     * @return  iterator pokazujący na korzeń drzewa.
+     * @return  iterator
      */
-    inline iterator root() const;
+    inline iterator root();
+
+    /**
+     * Zwraca stały iterator pokazujący na korzeń drzewa.
+     * 
+     * @return  iterator
+     */
+    inline iterator croot() const;
 
     /**
      * Zwraca wartość 'true' jeśli ilość węzłów w drzewie wynosi 0.
@@ -420,9 +438,9 @@ template<typename T>
 Drzewo<T>::Drzewo(const Drzewo& other_tree)
 {
     number_of_nodes = 0;
-    if(other_tree.root().ptr != nullptr)
+    if(other_tree.croot().ptr != nullptr)
     {
-        Node* other_root = other_tree.root().ptr;
+        Node* other_root = other_tree.croot().ptr;
         root_node = new Node(other_root->value);        
         number_of_nodes++;
 
@@ -433,14 +451,14 @@ Drzewo<T>::Drzewo(const Drzewo& other_tree)
 template<typename T>
 Drzewo<T>& Drzewo<T>::operator=(const Drzewo& other_tree)
 {
-    if(other_tree.root().ptr != nullptr)
+    if(other_tree.croot().ptr != nullptr)
     {
         if(number_of_nodes)
         {
             delete_tree();
         }
 
-        Node* other_root = other_tree.root().ptr;
+        Node* other_root = other_tree.croot().ptr;
         root_node = new Node(other_root->value);        
         number_of_nodes++;
 
@@ -501,9 +519,9 @@ void Drzewo<T>::erase(const iterator& it)
         return;
     }
 
+    delete_node(it.ptr);
     auto find = std::find(it.ptr->parent->children.begin(),it.ptr->parent->children.end(),it.ptr);
     it.ptr->parent->children.erase(find);
-    delete_node(it.ptr);
 }
 
 template<typename T>
@@ -513,19 +531,37 @@ inline typename Drzewo<T>::iterator Drzewo<T>::getChild(const iterator& parent, 
 }
 
 template<typename T>
-inline typename Drzewo<T>::iterator Drzewo<T>::begin() const 
+inline typename Drzewo<T>::iterator Drzewo<T>::begin()
 {
     return iterator(root_node); 
 }
 
 template<typename T>
-inline typename Drzewo<T>::iterator Drzewo<T>::end() const 
+inline typename Drzewo<T>::iterator Drzewo<T>::cbegin() const
+{
+    return iterator(root_node); 
+}
+
+template<typename T>
+inline typename Drzewo<T>::iterator Drzewo<T>::end()
 { 
     return iterator(nullptr); 
 }
 
 template<typename T>
-inline typename Drzewo<T>::iterator Drzewo<T>::root() const 
+inline typename Drzewo<T>::iterator Drzewo<T>::cend() const
+{ 
+    return iterator(nullptr); 
+}
+
+template<typename T>
+inline typename Drzewo<T>::iterator Drzewo<T>::root() 
+{ 
+    return iterator(root_node); 
+}
+
+template<typename T>
+inline typename Drzewo<T>::iterator Drzewo<T>::croot() const
 { 
     return iterator(root_node); 
 }
